@@ -899,6 +899,7 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td {
   font-size: 1.2rem;
   padding: 10px 8px;
+  height: 1px;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td.bg_load, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td.bg_load input {
   background-color: rgba(82, 196, 26, 0.08);
@@ -938,15 +939,16 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select {
   width: calc(100% + 16px);
-  height: 100%;
+  height: calc(100% + 20px);
   font-size: 1.2rem;
   line-height: 2rem;
   border: none;
   border-radius: 0;
   padding: 10px 8px;
   margin: -10px -8px;
+  background-color: transparent;
 }
-section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input[type=number], section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select[type=number] {
+section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input[type=number], section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input.taright, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select[type=number], section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select.taright {
   text-align: right;
 }
 section .container .ap_content .btn_wrap {

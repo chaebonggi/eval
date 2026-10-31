@@ -948,6 +948,7 @@ section{
                                     td{
                                         font-size: 1.2rem;
                                         padding:10px 8px;
+                                        height: 1px;
 
                                         &.bg_load,
                                         &.bg_load input{
@@ -983,15 +984,17 @@ section{
 
                                         input, select{
                                             width: calc(100% + 16px);
-                                            height: 100%;
+                                            height: calc(100% + 20px);
                                             font-size: 1.2rem;
                                             line-height: 2rem;
                                             border: none;
                                             border-radius: 0;
                                             padding: 10px 8px;
                                             margin: -10px -8px;
+                                            background-color: transparent;
 
-                                            &[type=number]{
+                                            &[type=number],
+                                            &.taright{
                                                 text-align: right;
                                             }
                                         }

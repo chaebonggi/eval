@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착지원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr01">지원신청자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">신청 현황</span>
+                    <div><span class="material-symbols-outlined">dashboard</span><a href="index.html" class="d1">신청현황 대시보드</a></div>
+                </li>
+                <li>
+                    <span class="stit">영농계획서 작성(6단계)</span>
+                    <div>
+                        <div class="ring">
+                            <div id="step1" class="svg-ring-container" data-total="6" data-current="6" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step01.html#step0101">인적사항</a></li>
+                            <li class="comp"><a href="user-step01.html#step0102">신청자 유형 및 영농경력</a></li>
+                            <li class="comp"><a href="user-step01.html#step0103">가구 구성</a></li>
+                            <li class="comp"><a href="user-step01.html#step0104">영농 품목 정보</a></li>
+                            <li class="comp"><a href="user-step01.html#step0105">영농 규모</a></li>
+                            <li class="comp"><a href="user-step01.html#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step2" class="svg-ring-container" data-total="3" data-current="3" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step02.html#step0201">주품목 선정 근거</a></li>
+                            <li class="comp"><a href="user-step02.html#step0202">영농기반 소재지</a></li>
+                            <li class="comp"><a href="user-step02.html#step0203">영농 동기 및 5개년 발전 경로</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step3" class="svg-ring-container" data-total="4" data-current="4" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step03.html#step0301">영농 방법</a></li>
+                            <li class="comp"><a href="user-step03.html#step0302">영농 지역 선정 타당성</a></li>
+                            <li class="comp"><a href="user-step03.html#step0303">판매 계획</a></li>
+                            <li class="comp"><a href="user-step03.html#step0304">판매처 확보 방안</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step4" class="svg-ring-container" data-total="3" data-current="3" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step04.html#step0401">자금 조달 내역</a></li>
+                            <li class="comp"><a href="user-step04.html#step0402">자금 상환 계획</a></li>
+                            <li class="comp"><a href="user-step04.html#step0403">정책자금 미승인 대응 시나리오</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step5" class="svg-ring-container" data-total="4" data-current="4" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step05.html#step0501">농업소득 성장 계획</a></li>
+                            <li class="comp"><a href="user-step05.html#step0502">안정기 가구 생활비 확보 계획</a></li>
+                            <li class="comp"><a href="user-step05.html#step0503">적자 발생 시 대응 방안</a></li>
+                            <li class="comp"><a href="user-step05.html#step0504">영농 정착 후 중장기 비전</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step6" class="svg-ring-container" data-total="3" data-current="0" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt on">
+                        <ul>
+                            <li><a href="#step0601">5개년 종합표</a></li>
+                            <li><a href="#step0602">수치 산출 근거</a></li>
+                            <li><a href="#step0603">비목 분류별 5개년 경영비 산정</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="stit">점검 및 종합본</span>
+                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="user-self.html" class="d1">제출 전 자가점검</a></div>
+                    <div><span class="material-symbols-outlined">all_inbox</span><a href="user-total.html" class="d1">영농계획서 종합본</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>영농계획서 작성(6단계)</li>
+                        <li>5개년 종합표</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>5개년 종합표</h2>
+                    <div>
+                        <span class="required">*</span> 필수
+                    </div>
+                </div>
+                <div class="contents_wrap">
+                    <!-- 01 5개년 종합표 -->
+                    <h3 id="step0601"><span>01</span>5개년 종합표</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="guide type_notice">
+                                <span class="material-symbols-outlined">info</span> 1~5년차 규모(재배면적&middot;사육규모)&middot;매출&middot;경영비&middot;농외소득&middot;생산량을 입력하면 농업소득&middot;소득률이 자동 산출됨 (단위: 면적 평(1평=3.3㎡)&middot;금액 천원) &middot; 규모는 영농형태에 해당하는 행에만 입력합니다.
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">5개년 영농 종합표</div>
+                                <div class="table_scroll">
+                                    <table>
+                                        <caption>5개년 영농 종합표 (구분, 1년차, 2년차, 3년차, 4년차, 5년차, 비고)</caption>
+                                        <colgroup>
+                                            <col width="170">
+                                            <col width="95">
+                                            <col width="95">
+                                            <col width="95">
+                                            <col width="95">
+                                            <col width="105">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>1년차</th>
+                                                <th>2년차</th>
+                                                <th>3년차</th>
+                                                <th>4년차</th>
+                                                <th>5년차 <span class="required">*</span></th>
+                                                <th>비고</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- 재배면적 -->
+                                            <tr>
+                                                <td>재배면적 (평)</td>
+                                                <td><input type="number" value="500" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="1100" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="1300" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="1500" min="0" step="any" placeholder="0"></td>
+                                                <td>경종&middot;원예&middot;복합만 입력 - 주&middot;부품목 합산 총 재배면적 &middot; 1년차=개시&middot;현재 규모 &middot; 숫자만</td>
+                                            </tr>
+                                            <!-- 사육규모 -->
+                                            <tr>
+                                                <td>사육규모 (두&middot;수)</td>
+                                                <td><input type="number" min="0" step="any" placeholder="-"></td>
+                                                <td><input type="number" min="0" step="any" placeholder="-"></td>
+                                                <td><input type="number" min="0" step="any" placeholder="-"></td>
+                                                <td><input type="number" min="0" step="any" placeholder="-"></td>
+                                                <td><input type="number" min="0" step="any" placeholder="-"></td>
+                                                <td>축산&middot;복합(축산 포함)만 입력 - 두&middot;수 숫자만(단위 문자 불가) &middot; 1년차=개시&middot;현재 규모</td>
+                                            </tr>
+                                            <!-- 매출 (조수입) -->
+                                            <tr>
+                                                <td>매출 (조수입, 천원)</td>
+                                                <td class="taright bg_load"><input type="number" value="42000" readonly></td>
+                                                <td><input type="number" value="72000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="100000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="125000" min="0" step="any" placeholder="0"></td>
+                                                <td class="taright bg_load"><input type="number" value="145920" readonly></td>
+                                                <td>1&middot;5년차=판매계획(Ⅲ) 합계가 자동 반영(녹색&middot;직접 입력 없음) &middot; 2~4년차는 직접 입력 필수</td>
+                                            </tr>
+                                            <!-- 경영비 -->
+                                            <tr>
+                                                <td>경영비 (천원)</td>
+                                                <td class="taright bg_load"><input type="number" value="25000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="43000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="59000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="74000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="87000" readonly></td>
+                                                <td>자동 합산 - 아래 비목 분류(재료비&middot;노무비&middot;경비&middot;기타) 입력값의 연차별 합계</td>
+                                            </tr>
+                                            <!-- 농업소득 -->
+                                            <tr>
+                                                <td>농업소득 (= 매출 - 경영비)</td>
+                                                <td class="taright bg_load"><input type="number" value="17000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="29000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="41000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="51000" readonly></td>
+                                                <td class="taright bg_load"><input type="number" value="58920" readonly></td>
+                                                <td>(자동 산출)</td>
+                                            </tr>
+                                            <!-- 농외소득 -->
+                                            <tr>
+                                                <td>농외소득 (천원)</td>
+                                                <td><input type="number" value="0" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="0" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="0" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="0" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="0" min="0" step="any" placeholder="0"></td>
+                                                <td>농업 외 소득(겸업&middot;농가공 등) &middot; 없으면 0 입력 - 빈칸은 0으로 간주(감점 없음)</td>
+                                            </tr>
+                                            <!-- 생산량·출하량 -->
+                                            <tr>
+                                                <td>생산량&middot;출하량 (kg, 주품목)</td>
+                                                <td><input type="number" value="15000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="26000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="36000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="43000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" value="48000" min="0" step="any" placeholder="0"></td>
+                                                <td>주품목 기준 총 생산량 - 판매계획 거래량 산출에 사용 &middot; 숫자만</td>
+                                            </tr>
+                                            <!-- 소득률 -->
+                                            <tr>
+                                                <td>소득률 (자동 = 농업소득&divide;매출)</td>
+                                                <td class="taright bg_load"><input type="text" class="taright" value="40.5%" readonly></td>
+                                                <td class="taright bg_load"><input type="text" class="taright" value="40.3%" readonly></td>
+                                                <td class="taright bg_load"><input type="text" class="taright" value="41.0%" readonly></td>
+                                                <td class="taright bg_load"><input type="text" class="taright" value="40.8%" readonly></td>
+                                                <td class="taright bg_load"><input type="text" class="taright" value="40.4%" readonly></td>
+                                                <td>자동 산출 &middot; 음수 또는 85% 초과 연차는 (다)에 사유 기재</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 수치 산출 근거 -->
+                    <h3 id="step0602" class="gap_top"><span>02</span>수치 산출 근거</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="guide type_notice">
+                                <span class="material-symbols-outlined">info</span> 5개년 종합표에 기재한 매출, 경영비, 농업소득의 구체적 산출 과정과 신빙성 있는 근거 자료를 (가)~(다)에 걸쳐 빠짐없이 작성합니다.
+                            </div>
+                        </div>
+
+                        <!-- 근거 출처 선택 상단 분리 -->
+                        <div class="colspan4">
+                            <label>근거 출처(주된 출처 선택) <span class="required">*</span></label>
+                            <select>
+                                <option value="">출처를 선택하세요.</option>
+                                <option value="선도농가 실측" selected>선도농가 실측</option>
+                                <option value="농촌진흥청 농축산물소득자료">농촌진흥청 소득자료</option>
+                                <option value="aT KAMIS 도매시장 가격정보">aT KAMIS 가격정보</option>
+                                <option value="농협 계약재배 약정단가">농협 계약재배 약정단가</option>
+                                <option value="통계청 농가경제조사">통계청 농가경제조사</option>
+                                <option value="기타">기타 현장 실측자료</option>
+                            </select>
+                        </div>
+
+                        <!-- (가) 매출(총수입) 산출 근거 -->
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">
+                                    (가) 매출(총수입) 산출 근거 <span class="required">*</span>
+                                    <div class="word_cnt"><span>0</span>자</div>
+                                </div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> <strong>[용어&middot;산출]</strong> 매출(조수입) = 단가 &times; 생산량 또는 판매처별 매출액의 합계 (예: 평균 3,000원/kg &times; 48,000kg &fallingdotseq; 1억 4,400만원)<br/>
+                                <span class="info">※ [작성 &middot; 필수] 재배(사육)규모 &middot; 단수 &middot; 단가의 추정 근거를 현장조사&middot;거래자료 등과 함께 구체적으로 기술 (권장 300자 내외)</span>
+                            </div>
+                        </div>
+
+                        <!-- (나) 경영비 산정 근거 -->
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(나) 경영비 산정 근거 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> <strong>[용어&middot;산출]</strong> 경영비 = 비목별 금액의 합계 (종묘&middot;비료&middot;자재&middot;광열&middot;고용노력&middot;감가상각 등) / 감가상각비 = 취득가액 &divide; 내용연수 (연간 환산액) - 국고보조 취득 자산도 취득가액 전액 기준 산정<br/>
+                                <span class="info">※ [작성] 주요 비목의 구성과 산정 근거, 매출 규모와의 정합성을 기술 (권장 300자 내외)</span>
+                            </div>
+                        </div>
+
+                        <!-- (다) 농업소득·소득률 및 5개년 흐름 설명 -->
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(다) 농업소득&middot;소득률 및 5개년 흐름 설명 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> <strong>[용어&middot;산출]</strong> 농업소득 = 매출 &minus; 경영비 &middot; 소득률 = 농업소득 &divide; 매출 &middot; 성장률 = 안정기 평균(3&middot;4&middot;5년차) &divide; 초기 평균(1&middot;2년차) &middot; 자립도 = 농업소득 &divide; (농업소득 + 농외소득)<br/>
+                                <span class="info">※ [작성] 소득률이 품목 특성에 부합하는지와 투자&middot;회수 시점의 5개년 흐름을 설명 - 소득률이 음수이거나 85%를 초과하는 연차는 사유 기재 필수 (권장 300자 내외)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 비목 분류별 5개년 경영비 산정 -->
+                    <h3 id="step0603" class="gap_top"><span>03</span>비목 분류별 5개년 경영비 산정 <span class="desc">(단위: 천원)</span></h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="guide type_notice">
+                                <span class="material-symbols-outlined">info</span> 세부 비목을 재료비&middot;노무비&middot;경비&middot;기타 4개 분류로 통합하여 입력합니다. 위 종합표의 『경영비』 행은 4개 분류 합계로 자동 산출되며, 감가상각비&middot;임차료 등 고정성 비용도 해당 분류에 포함하여 누락 없이 기재합니다.
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">비목 분류별 5개년 경영비 산정 (단위: 천원)</div>
+                                <div class="table_scroll">
+                                    <table>
+                                        <caption>비목 분류별 5개년 경영비 산정 (비목 분류, 1년차, 2년차, 3년차, 4년차, 5년차, 5년차 비중)</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="110">
+                                            <col width="110">
+                                            <col width="110">
+                                            <col width="110">
+                                            <col width="110">
+                                            <col width="110">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>비목 분류</th>
+                                                <th>1년차</th>
+                                                <th>2년차</th>
+                                                <th>3년차</th>
+                                                <th>4년차</th>
+                                                <th>5년차</th>
+                                                <th>5년차 비중</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <td class="tacenter">비목 합계</td>
+                                                <td class="taright bg_load"><span>25,000</span></td>
+                                                <td class="taright bg_load"><span>43,000</span></td>
+                                                <td class="taright bg_load"><span>59,000</span></td>
+                                                <td class="taright bg_load"><span>74,000</span></td>
+                                                <td class="taright bg_load"><span>87,000</span></td>
+                                                <td class="taright bg_load"><span>100.0%</span></td>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td>① 재료비 (투입재)</td>
+                                                <td><input type="number" class="area-input" value="8300" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="14300" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="19600" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="24600" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="28800" min="0" step="any" placeholder="0"></td>
+                                                <td class="taright bg_load"><span class="ratio-val">33.1</span>%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>② 노무비 (고용노동)</td>
+                                                <td><input type="number" class="area-input" value="5000" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="8600" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="11800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="14800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="17400" min="0" step="any" placeholder="0"></td>
+                                                <td class="taright bg_load"><span class="ratio-val">20.0</span>%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>③ 경비 (동력&middot;시설&middot;관리)</td>
+                                                <td><input type="number" class="area-input" value="11200" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="19200" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="25800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="32800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="38600" min="0" step="any" placeholder="0"></td>
+                                                <td class="taright bg_load"><span class="ratio-val">44.4</span>%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>④ 기타 (별도)</td>
+                                                <td><input type="number" class="area-input" value="500" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="900" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="1800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="1800" min="0" step="any" placeholder="0"></td>
+                                                <td><input type="number" class="area-input" value="2200" min="0" step="any" placeholder="0"></td>
+                                                <td class="taright bg_load"><span class="ratio-val">2.5</span>%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 비목 분류 정의 및 포함 항목 안내 -->
+                        <div class="colspan4 gap_minus">
+                            <div class="guide" style="font-size:1.2rem; line-height:1.6;">
+                                <strong>[비목 분류 정의 및 포함 항목]</strong><br/>
+                                &bull; <strong>① 재료비 (투입재)</strong>: 작물 재배&middot;가축 사육에 직접 투입되어 소모되는 재료성 비용<br/>
+                                &nbsp;&nbsp;- [경종&middot;원예] 종자&middot;종묘&middot;묘목비, 비료&middot;양액&middot;상토&middot;배지비, 농약&middot;방제비, 멀칭&middot;지주&middot;포장 등 소모자재비 / [축산] 가축(종축 제외) 구입비, 배합&middot;조사료비, 약품비 등<br/>
+                                &bull; <strong>② 노무비 (고용노동)</strong>: 영농에 투입되는 외부 고용 노동력에 대한 인건비 (본인&middot;가족 자가노동 제외)<br/>
+                                &nbsp;&nbsp;- 상시&middot;계절&middot;일용직 고용 임금, 방제&middot;정식&middot;수확 등 작업 위탁료(위탁영농비), 고용 관련 4대보험 사업주 부담분<br/>
+                                &bull; <strong>③ 경비 (동력&middot;시설&middot;관리)</strong>: 영농 시설&middot;기계 운영&middot;유지와 자본재 감가상각 등 제반 관리 비용<br/>
+                                &nbsp;&nbsp;- 광열&middot;전력&middot;연료비, 수도&middot;수선유지비, 소농구&middot;대농구&middot;영농시설 감가상각비(내용연수 평준화), 농지&middot;기계 임차료, 재해보험료, 지급이자<br/>
+                                &bull; <strong>④ 기타 (별도)</strong>: 선별&middot;포장&middot;운송&middot;판매수수료 등 유통경비, 조합비&middot;영농 교육&middot;컨설팅비, 통신&middot;소액 잡비 등
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <div>
+                        <button type="button" class="type3" onclick="location.href='user-step05.html'"><span class="material-symbols-outlined">arrow_back</span> 이전 단계로</button>
+                    </div>
+                    <div>
+                        <button type="button" class="type2"><span class="material-symbols-outlined">save</span> 임시저장</button>
+                        <button type="button" onclick="location.href='user-self.html'">제출 전 자가점검 <span class="material-symbols-outlined">arrow_forward</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
