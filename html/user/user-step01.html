@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템</title>
+    <link rel="preload" as="style" crossorigin="anonymous"  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr01">지원신청자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">신청 현황</span>
+                    <div><span class="material-symbols-outlined">dashboard</span><a href="javascript:void(0)" class="d1">신청현황 대시보드</a></div>
+                </li>
+                <li>
+                    <span class="stit">영농계획서 작성(6단계)</span>
+                    <div>
+                        <div class="ring">
+                            <div id="step1" class="svg-ring-container" data-total="6" data-current="3" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt on">
+                        <ul>
+                            <li class="comp"><a href="#step0101">인적사항</a></li>
+                            <li><a href="#step0102">신청자 유형 및 영농경력</a></li>
+                            <li class="comp"><a href="#step0103">가구 구성</a></li>
+                            <li class="comp"><a href="#step0104">영농 품목 정보</a></li>
+                            <li><a href="#step0105">영농 규모</a></li>
+                            <li><a href="#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step2" class="svg-ring-container" data-total="3" data-current="1" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="javascript:void(0)">주품목 선정 근거</a></li>
+                            <li><a href="javascript:void(0)">영농기반 소재지</a></li>
+                            <li><a href="javascript:void(0)">영농 동기 및 5개년 발전 경로</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step3" class="svg-ring-container" data-total="4" data-current="3" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="javascript:void(0)">영농 방법</a></li>
+                            <li class="comp"><a href="javascript:void(0)">영농 지역 선정 타당성</a></li>
+                            <li class="comp"><a href="javascript:void(0)">판매 계획</a></li>
+                            <li><a href="javascript:void(0)">판매처 확보 방안</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step4" class="svg-ring-container" data-total="3" data-current="2" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="javascript:void(0)">자금 조달 내역</a></li>
+                            <li class="comp"><a href="javascript:void(0)">자금 상환 계획</a></li>
+                            <li><a href="javascript:void(0)">정책자금 미승인 대응 시나리오</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step5" class="svg-ring-container" data-total="4" data-current="1" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="javascript:void(0)">농업소득 성장 계획</a></li>
+                            <li><a href="javascript:void(0)">안정기 가구 생활비 확보 계획</a></li>
+                            <li><a href="javascript:void(0)">적자 발생 시 대응 방안</a></li>
+                            <li><a href="javascript:void(0)">영농 정착 후 중장기 비전</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step6" class="svg-ring-container" data-total="3" data-current="2" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="javascript:void(0)">5개년 종합표</a></li>
+                            <li class="comp"><a href="javascript:void(0)">수치 산출 근거</a></li>
+                            <li><a href="javascript:void(0)">비목 분류별 5개년 경영비 산정</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="stit">점검 및 종합본</span>
+                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="javascript:void(0)" class="d1">제출 전 자가점검</a></div>
+                    <div><span class="material-symbols-outlined">all_inbox</span><a href="javascript:void(0)" class="d1">영농계획서 종합본</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>영농계획서 작성(6단계)</li>
+                        <li>신청자 기본정보</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>신청자 기본정보</h2>
+                    <div >
+                        <span class="required">*</span> 필수
+                    </div>
+                </div>
+                <div class="contents_wrap">
+                    <h3 id="step0101"><span>01</span>인적사항</h3>
+                    <div class="response_table">
+                        <div class="colspan2">
+                            <label for="name">성명</label>
+                            <input type="text" id="name" value="홍길동" readonly />
+                        </div>
+                        <div class="colspan2">
+                            <label for="birth">생년월일</label>
+                            <input type="date" id="birth" value="1980-01-01" />
+                        </div>
+                        <div class="colspan2">
+                            <label for="tel">전화번호</label>
+                            <input type="text" id="tel" value="" placeholder="예: 010-1234-5678 (하이픈(-)을 포함하여 입력해주세요.)" />
+                        </div>
+                        <div class="colspan2">
+                            <label for="email">이메일</label>
+                            <input type="text" id="email" value="" placeholder="예: hong@example.com" />
+                        </div>
+                        <div class="colspan2">
+                            <label for="edu">최종학력</label>
+                            <select id="edu">
+                                <option value="">최종학력을 선택하세요.</option>
+                                <option value="1">중졸</option>
+                                <option value="2">고졸</option>
+                                <option value="3">전문대졸</option>
+                                <option value="4">대졸</option>
+                                <option value="5">대학원(석사)</option>
+                                <option value="6">대학원(박사)</option>
+                            </select>
+                        </div>
+                        <div class="colspan2">
+                            <label for="edu_agri">농업계 학력 여부</label>
+                            <div class="radio_group">
+                                <input type="radio" id="edu_agri_yes" name="edu_agri" value="yes" />
+                                <label for="edu_agri_yes" class="fit">해당</label>
+                                <input type="radio" id="edu_agri_no" name="edu_agri" value="no" />
+                                <label for="edu_agri_no" class="fit">비해당</label>
+                            </div>
+                        </div>
+                        <div class="colspan4">
+                            <label for="addr">주소(시&middot;군&middot;구까지)</label>
+                            <input type="text" id="addr" value="" placeholder="예: 경상북도 ㅇㅇ군 ㅇㅇ면 ㅇㅇ리" />
+                            <span class="info">※ 주소는 개인정보 보호를 위해 상세 주소는 받지 않습니다. 시&middot;군&middot;구(필요시 읍&middot;면&middot;동)까지만 입력해주세요.</span>
+                        </div>
+                    </div>
+                    <h3 id="step0102" class="gap_top"><span>02</span>신청자 유형 및 영농경력</h3>
+                    <div class="response_table">
+                        <div class="colspan2">
+                            <label for="kind">신청자 유형</label>
+                            <select id="kind">
+                                <option value="">신청자 유형을 선택하세요.</option>
+                                <option value="1">예비농업인</option>
+                                <option value="2">창업농 1년차</option>
+                                <option value="3">창업농 2년차</option>
+                                <option value="4">창업농 3년차</option>
+                            </select>
+                        </div>
+                        <div class="colspan2">
+                            <label for="build">농업경영체 등록(예정)일</label>
+                            <input type="date" id="build" value="" />
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> <strong>지원대상 유형:</strong> 예비농업인 및 독립경영 3년 이하 창업농만 신청 가능
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="step0103" class="gap_top"><span>03</span>가구 구성</h3>
+                    <div class="response_table">
+                        <div class="colspan4">
+                            <label for="family">가구 구성원 수(본인 포함) <span class="required">*</span></label>
+                            <select id="family" class="">
+                                <option value="">가구 구성원 수(본인 포함)를 선택하세요.</option>
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                            </select>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 본인 포함 가구원 수를 선택합니다. <span class="info">미기재 시 가처분 순수익은 산출 불가로 배점을 받지 못합니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="step0104" class="gap_top"><span>04</span>영농 품목 정보</h3>
+                    <div class="response_table">
+                        <div class="colspan2">
+                            <div class="flex jcbetween">
+                                <label for="type">영농 형태 <span class="required">*</span></label>
+                                <span class="material-symbols-outlined tooltip" data-tooltips="※ 축산과 경종&middot;원예를 함께하는 경우 '복합영농'을 선택하고, 부품목란과 판매계획의 부품목 행과 함께 기재합니다.">info</span>
+                            </div>
+                            <select id="type">
+                                <option value="">영농 형태를 선택하세요.</option>
+                                <option value="1">경종(식량작물)</option>
+                                <option value="2">원예(채소&middot;과수&middot;화훼)</option>
+                                <option value="3">축산</option>
+                                <option value="4">특양&middot;약용&middot;버섯</option>
+                                <option value="5">곤충&middot;기타</option>
+                                <option value="6">복합영농</option>
+                            </select>
+                        </div>
+                        <div class="colspan2">
+                            <div class="flex jcbetween">
+                                <label for="cate">농업 분야 대분류 <span class="required">*</span></label>
+                                <span class="material-symbols-outlined tooltip" data-tooltips="※ 딸기&middot;토마토&middot;수박&middot;참외&middot;오이&middot;멜론 등 과채류는 '과수'가 아니라 '채소'로 분류됩니다.&#10;세부 품목과 대분류가 일치하는지 확인해 주십시오.">info</span>
+                            </div>
+                            <select id="cate">
+                                <option value="">농업 분야 대분류를 선택하세요.</option>
+                                <option value="1">식량식품</option>
+                                <option value="2">채소</option>
+                                <option value="3">과수</option>
+                                <option value="4">화훼</option>
+                                <option value="5">특용&middot;약용작물</option>
+                                <option value="6">버섯</option>
+                                <option value="7">축산</option>
+                                <option value="8">곤충</option>
+                                <option value="9">기타</option>
+                            </select>
+                        </div>
+                        <div class="colspan2">
+                            <label for="detail">세부 품목&middot;축종 <span class="required">*</span></label>
+                            <input type="text" id="detail" value="" placeholder="예: 토마토" />
+                        </div>
+                        <div class="colspan2">
+                            <label for="main">품종&middot;계통 (주력)</label>
+                            <input type="text" id="main" value="" placeholder="예: 베타(완숙토마토)" />
+                        </div>
+                        <div class="colspan4">
+                            <label for="both">부품목(있을 시)</label>
+                            <input type="text" id="both" value="" placeholder="" />
+                            <span class="info">※ 예: 식량 벼, 원예 딸기&middot;토마토, 축산 한우&middot;양돈 등/복합영농 시 부품목 기재</span>
+                        </div>
+                    </div>
+                    <h3 id="step0105" class="gap_top"><span>05</span>영농 규모<span class="desc">(재배&middot;사육 - 해당 유형에 작성&middot;재배면적은 주&middot;부품목 합산 총면전, 평 단위/1평=3.3m<sup>2</sup>)</span></h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                ※ 예비농업은은 영농 개시 예정 규모, 창업농(1~3년차)는 현재 영농 규모를 기재하며, 재배유형별 해당 품목과 비고를 함께 기재</span>
+                            </div>
+                        </div>
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(가) 재배유형[경종&middot;원예]</div>
+                                <table>
+                                    <caption>(가) 재배유형[경종&middot;원예]</caption>
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="100">
+                                        <col width="80">
+                                        <col width="180">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>재배유형</th>
+                                            <th>면적(평) <span class="material-symbols-outlined tooltip" data-tooltips="※ 면적은 평 단위 숫자만 입력합니다.(예: 360).&#10;축사부지 면적은 재배면적이 아니라 사육유형(아래 표)에 기재합니다.">info</span></th>
+                                            <th>비율</th>
+                                            <th>해당 품목 <span class="material-symbols-outlined tooltip" data-tooltips="※ 해당 재배유형에서 재배할 품목을 기재합니다.(예: 토마토, 딸기)">info</span></th>
+                                            <th>비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>재배면적 합계</td>
+                                            <td class="taright"><span id="total-area">0</span></td>
+                                            <td class="taright"><span id="total-ratio">0.0</span>%</td>
+                                            <td></td>
+                                            <td>개시&middot;현재 규모</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>시설(토경)</td>
+                                            <td><input type="number" class="area-input" min="0" step="any"></td>
+                                            <td class="taright"><span class="ratio-val">0.0</span>%</td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" placeholder="토양재배" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시설(수경)</td>
+                                            <td><input type="number" class="area-input" min="0" step="any"></td>
+                                            <td class="taright"><span class="ratio-val">0.0</span>%</td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" placeholder="양액재배" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>노지</td>
+                                            <td><input type="number" class="area-input" min="0" step="any"></td>
+                                            <td class="taright"><span class="ratio-val">0.0</span>%</td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" placeholder="노지" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>기타</td>
+                                            <td><input type="number" class="area-input" min="0" step="any"></td>
+                                            <td class="taright"><span class="ratio-val">0.0</span>%</td>
+                                            <td><input type="text" ></td>
+                                            <td><input type="text" placeholder="유리온실 등" ></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(나) 사육유형[축산]</div>
+                                <table>
+                                    <caption>(나) 사육유형[축산]</caption>
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="100">
+                                        <col width="80">
+                                        <col width="180">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>축종 <span class="material-symbols-outlined tooltip" data-tooltips="※ 사육할 축종을 목록에서 선택합니다.(곤충 포함)">info</span></th>
+                                            <th>사육규모(숫자)</th>
+                                            <th>단위 <span class="material-symbols-outlined tooltip" data-tooltips="※ 축종에 맞는 사육규모 단위를 직접 입력합니다.(예: 두, 수, 마리, 군)">info</span></th>
+                                            <th>사육방식</th>
+                                            <th>비고(기타 선택 시 기재) <span class="material-symbols-outlined tooltip" data-tooltips="※ 축종 또는 사육방식에서 '기타'를 선택한 경우, 어떤 축종&middot;사육방식인지 구체적으로 기재합니다.">info</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5">※ 사육규모는 숫자만 기재하고 단위는 직접 입력(예: 두, 수, 마리), '기타' 선택 시 축종&middot;사육방식을 비고에 기재</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select>
+                                                    <option value="">축종 선택</option>
+                                                    <option value="A">한우(번식)</option>
+                                                    <option value="B">한우(비육)</option>
+                                                    <option value="C">한우(일관)</option>
+                                                    <option value="D">육우</option>
+                                                    <option value="E">젖소</option>
+                                                    <option value="F">양돈(번식)</option>
+                                                    <option value="G">양돈(비육)</option>
+                                                    <option value="H">양돈(일관)</option>
+                                                    <option value="I">산란계</option>
+                                                    <option value="J">육계</option>
+                                                    <option value="K">오리</option>
+                                                    <option value="L">염소&middot;면양</option>
+                                                    <option value="M">말</option>
+                                                    <option value="N">꿀벌</option>
+                                                    <option value="O">곤충</option>
+                                                    <option value="P">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="number" min="0" step="any"></td>
+                                            <td><input type="text" ></td>
+                                            <td>
+                                                <select>
+                                                    <option value="">사육방식 선택</option>
+                                                    <option value="A">번식</option>
+                                                    <option value="B">비육</option>
+                                                    <option value="C">일관(번식+비육)</option>
+                                                    <option value="D">방사</option>
+                                                    <option value="E">계류</option>
+                                                    <option value="F">무창계사</option>
+                                                    <option value="G">개방계사</option>
+                                                    <option value="H">톱밥발효</option>
+                                                    <option value="I">케이지</option>
+                                                    <option value="J">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="text" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select>
+                                                    <option value="">축종 선택</option>
+                                                    <option value="A">한우(번식)</option>
+                                                    <option value="B">한우(비육)</option>
+                                                    <option value="C">한우(일관)</option>
+                                                    <option value="D">육우</option>
+                                                    <option value="E">젖소</option>
+                                                    <option value="F">양돈(번식)</option>
+                                                    <option value="G">양돈(비육)</option>
+                                                    <option value="H">양돈(일관)</option>
+                                                    <option value="I">산란계</option>
+                                                    <option value="J">육계</option>
+                                                    <option value="K">오리</option>
+                                                    <option value="L">염소&middot;면양</option>
+                                                    <option value="M">말</option>
+                                                    <option value="N">꿀벌</option>
+                                                    <option value="O">곤충</option>
+                                                    <option value="P">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="number" min="0" step="any"></td>
+                                            <td><input type="text" ></td>
+                                            <td>
+                                                <select>
+                                                    <option value="">사육방식 선택</option>
+                                                    <option value="A">번식</option>
+                                                    <option value="B">비육</option>
+                                                    <option value="C">일관(번식+비육)</option>
+                                                    <option value="D">방사</option>
+                                                    <option value="E">계류</option>
+                                                    <option value="F">무창계사</option>
+                                                    <option value="G">개방계사</option>
+                                                    <option value="H">톱밥발효</option>
+                                                    <option value="I">케이지</option>
+                                                    <option value="J">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="text" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select>
+                                                    <option value="">축종 선택</option>
+                                                    <option value="A">한우(번식)</option>
+                                                    <option value="B">한우(비육)</option>
+                                                    <option value="C">한우(일관)</option>
+                                                    <option value="D">육우</option>
+                                                    <option value="E">젖소</option>
+                                                    <option value="F">양돈(번식)</option>
+                                                    <option value="G">양돈(비육)</option>
+                                                    <option value="H">양돈(일관)</option>
+                                                    <option value="I">산란계</option>
+                                                    <option value="J">육계</option>
+                                                    <option value="K">오리</option>
+                                                    <option value="L">염소&middot;면양</option>
+                                                    <option value="M">말</option>
+                                                    <option value="N">꿀벌</option>
+                                                    <option value="O">곤충</option>
+                                                    <option value="P">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="number" min="0" step="any"></td>
+                                            <td><input type="text" ></td>
+                                            <td>
+                                                <select>
+                                                    <option value="">사육방식 선택</option>
+                                                    <option value="A">번식</option>
+                                                    <option value="B">비육</option>
+                                                    <option value="C">일관(번식+비육)</option>
+                                                    <option value="D">방사</option>
+                                                    <option value="E">계류</option>
+                                                    <option value="F">무창계사</option>
+                                                    <option value="G">개방계사</option>
+                                                    <option value="H">톱밥발효</option>
+                                                    <option value="I">케이지</option>
+                                                    <option value="J">기타</option>                                             
+                                                </select>
+                                            </td>
+                                            <td><input type="text" ></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="step0106" class="gap_top"><span>06</span>5년차 목표 규모 시설&middot;노동력 운영 계획</h3>
+                    <div class="response_table">
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(가) 5년차 시설&middot;장비 운영 계획 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(나) 5년차 노동력 운영 계획 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <div style="margin-left: auto;">
+                        <button class="type2"><span class="material-symbols-outlined">save</span> 임시저장</button>
+                        <button type="button" onclick="location.href='user-step02.html'">다음 단계로 <span class="material-symbols-outlined">arrow_forward</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </section>
+</body>
+</html>

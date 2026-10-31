@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템</title>
+    <link rel="preload" as="style" crossorigin="anonymous"  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <!-- <div class="badge usr01">지원신청자</div> -->
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        
+        
+        <div class="container">
+            <div class="ap_content">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>퍼블리싱 목록</h2>
+                </div>
+                <div class="contents_wrap">
+                    <h3><span>01</span>지원신청자</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">지원신청자 퍼블리싱 목록</div>
+                                <table>
+                                    <caption>지원신청자 퍼블리싱 목록</caption>
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="250">
+                                        <col width="250">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>단계</th>
+                                            <th>페이지명</th>
+                                            <th>URL</th>
+                                            <th>비고(상태)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">진행 상태 확인 후 링크 클릭: 완료 항목만 페이지 생성됨</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>0단계</td>
+                                            <td>신청현황 대시보드</td>
+                                            <td><a href="javascript:void(0)">/user-dashboard.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>1단계</td>
+                                            <td>신청자 기본정보</td>
+                                            <td><a href="user-step01.html">/user-step01.html</a></td>
+                                            <td>완료</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>2단계</td>
+                                            <td>영농진입 준비도</td>
+                                            <td><a href="user-step02.html">/user-step02.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>3단계</td>
+                                            <td>영농수행 계획</td>
+                                            <td><a href="user-step03.html">/user-step03.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>4단계</td>
+                                            <td>자금조달&middot;상환</td>
+                                            <td><a href="user-step04.html">/user-step04.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>5단계</td>
+                                            <td>정착 계획</td>
+                                            <td><a href="user-step05.html">/user-step05.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>6단계</td>
+                                            <td>5개년 종합표</td>
+                                            <td><a href="javascript:void(0)">/user-step06.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>7단계</td>
+                                            <td>제출 전 자가점검</td>
+                                            <td><a href="javascript:void(0)">/user-self.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>8단계</td>
+                                            <td>영농계획서 종합본</td>
+                                            <td><a href="user-total.html">/user-total.html</a></td>
+                                            <td>완료</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="gap_top"><span>02</span>평가자</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">평가자 퍼블리싱 목록</div>
+                                <table>
+                                    <caption>평가자 퍼블리싱 목록</caption>
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="250">
+                                        <col width="250">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>단계</th>
+                                            <th>페이지명</th>
+                                            <th>URL</th>
+                                            <th>비고(상태)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">진행 상태 확인 후 링크 클릭: 완료 항목만 페이지 생성됨</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>0단계</td>
+                                            <td>대시보드</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>1단계</td>
+                                            <td>정성평가 화면</td>
+                                            <td><a href="exam-step01.html">/exam-step01.html</a></td>
+                                            <td>
+                                                완료<br/>
+                                                <span style="color:red">[3-①] 클릭 시 위치 표기 확인 필요</span>
+                                            </td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>2단계</td>
+                                            <td>서류 등록</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 
+                    <h3 class="gap_top"><span>03</span>지자체 관리자</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">지자체 관리자 퍼블리싱 목록</div>
+                                <table>
+                                    <caption>지자체 관리자 퍼블리싱 목록</caption>
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="250">
+                                        <col width="250">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>단계</th>
+                                            <th>페이지명</th>
+                                            <th>URL</th>
+                                            <th>비고(상태)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">진행 상태 확인 후 링크 클릭: 완료 항목만 페이지 생성됨</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1단계</td>
+                                            <td>정량평가</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="gap_top"><span>04</span>관리자</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">관리자 퍼블리싱 목록</div>
+                                <table>
+                                    <caption>관리자 퍼블리싱 목록</caption>
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="250">
+                                        <col width="250">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>단계</th>
+                                            <th>페이지명</th>
+                                            <th>URL</th>
+                                            <th>비고(상태)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">진행 상태 확인 후 링크 클릭: 완료 항목만 페이지 생성됨</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>회원관리</td>
+                                            <td>대상자 정보</td>
+                                            <td><a href="../user/admin-user-list.html">/admn-user-list.html</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>회원관리</td>
+                                            <td>대상자 상세정보</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>회원관리</td>
+                                            <td>평가위원 관리</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>회원관리</td>
+                                            <td>평가위원 상세정보</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>평가관리</td>
+                                            <td>정성평가 관리</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>평가관리</td>
+                                            <td>대상자별 평가점수</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>통계</td>
+                                            <td>전체평가 요약</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>통계</td>
+                                            <td>지역별 통계</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>서류관리</td>
+                                            <td>평가위원 제출서류 목록</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>서류관리</td>
+                                            <td>평가위원 제출서류 상세</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>서류관리</td>
+                                            <td>평가위원 제출서류 등록</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                     -->
+                    <h3 class="gap_top"><span>05</span>공통</h3>
+                    <div class="response_table">
+                        <div class="colspan4 gap_minus">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">공통 퍼블리싱 목록</div>
+                                <table>
+                                    <caption>공통 퍼블리싱 목록</caption>
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="250">
+                                        <col width="250">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>단계</th>
+                                            <th>페이지명</th>
+                                            <th>URL</th>
+                                            <th>비고(상태)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">진행 상태 확인 후 링크 클릭: 완료 항목만 페이지 생성됨</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1단계</td>
+                                            <td>로그인</td>
+                                            <td><a href="javascript:void(0)">-</a></td>
+                                            <td>예정</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            
+    </section>
+</body>
+</html>

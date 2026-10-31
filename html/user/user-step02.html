@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr01">지원신청자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">신청 현황</span>
+                    <div><span class="material-symbols-outlined">dashboard</span><a href="index.html" class="d1">신청현황 대시보드</a></div>
+                </li>
+                <li>
+                    <span class="stit">영농계획서 작성(6단계)</span>
+                    <div>
+                        <div class="ring">
+                            <div id="step1" class="svg-ring-container" data-total="6" data-current="6" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li class="comp"><a href="user-step01.html#step0101">인적사항</a></li>
+                            <li class="comp"><a href="user-step01.html#step0102">신청자 유형 및 영농경력</a></li>
+                            <li class="comp"><a href="user-step01.html#step0103">가구 구성</a></li>
+                            <li class="comp"><a href="user-step01.html#step0104">영농 품목 정보</a></li>
+                            <li class="comp"><a href="user-step01.html#step0105">영농 규모</a></li>
+                            <li class="comp"><a href="user-step01.html#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step2" class="svg-ring-container" data-total="3" data-current="0" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt on">
+                        <ul>
+                            <li><a href="#step0201">주품목 선정 근거</a></li>
+                            <li><a href="#step0202">영농기반 소재지</a></li>
+                            <li><a href="#step0203">영농 동기 및 5개년 발전 경로</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step3" class="svg-ring-container" data-total="4" data-current="0" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step03.html#step0301">영농 방법</a></li>
+                            <li><a href="user-step03.html#step0302">영농 지역 선정 타당성</a></li>
+                            <li><a href="user-step03.html#step0303">판매 계획</a></li>
+                            <li><a href="user-step03.html#step0304">판매처 확보 방안</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step4" class="svg-ring-container" data-total="3" data-current="0" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step04.html#step0401">자금 조달 내역</a></li>
+                            <li><a href="user-step04.html#step0402">자금 상환 계획</a></li>
+                            <li><a href="user-step04.html#step0403">정책자금 미승인 대응 시나리오</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step5" class="svg-ring-container" data-total="4" data-current="0" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step05.html#step0501">농업소득 성장 계획</a></li>
+                            <li><a href="user-step05.html#step0502">안정기 가구 생활비 확보 계획</a></li>
+                            <li><a href="user-step05.html#step0503">적자 발생 시 대응 방안</a></li>
+                            <li><a href="user-step05.html#step0504">영농 정착 후 중장기 비전</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step6" class="svg-ring-container" data-total="3" data-current="0" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step06.html#step0601">5개년 종합표</a></li>
+                            <li><a href="user-step06.html#step0602">수치 산출 근거</a></li>
+                            <li><a href="user-step06.html#step0603">비목 분류별 5개년 경영비 산정</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="stit">점검 및 종합본</span>
+                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="user-self.html" class="d1">제출 전 자가점검</a></div>
+                    <div><span class="material-symbols-outlined">all_inbox</span><a href="user-total.html" class="d1">영농계획서 종합본</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>영농계획서 작성(6단계)</li>
+                        <li>영농진입 준비도</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>영농진입 준비도</h2>
+                    <div>
+                        <span class="required">*</span> 필수
+                    </div>
+                </div>
+                <div class="contents_wrap">
+                    <h3 id="step0201"><span>01</span>주품목 선정 근거</h3>
+                    <div class="response_table">
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(가) 본인 역량 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 영농 경력·관련 기술·교육 이수·자격·실습·인턴 경험 등 선택 품목 경영 역량을 기재합니다. (권장 400자 내외)<br/>
+                                <span class="info">※ 현재 부족한 역량과 이를 보완하기 위한 교육·경험·협력 계획을 함께 기재하세요.</span>
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(나) 자본 여건 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 초기 투자 가능 규모·시설·장비 확보 가능성·자금조달 계획·자기자본 비율을 기재합니다. (권장 300자 내외)<br/>
+                                <span class="info">※ [자금 시트 연동] 총 조달 및 자기자본 서술 금액은 4단계 자금조달 시트와 일치해야 배점을 받습니다.</span>
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(다) 지역 현황 사전검토 및 품목 선택 사유 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 지역 내 선택 품목의 재배·사육 현황 사전 검토 결과와 품목 선택 사유를 기재합니다. (권장 300자 내외)<br/>
+                                <span class="info">※ 비주력 품목 선택 시 생산·기술·판로 보완 계획을 함께 서술하세요.</span>
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(라) 시장성&middot;입지 적합성 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 수요·가격 동향, 시장 규모, 기후·토양·기반시설 등 시장성과 입지 적합성 검토 결과를 작성합니다. (권장 300자 내외)
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="step0202" class="gap_top"><span>02</span>영농기반 소재지<span class="desc">(복수 기재 가능)</span></h3>
+                    <div class="response_table">
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <table>
+                                    <caption>영농기반 소재지 목록 (구분, 면적, 시군구, 읍면동 이하)</caption>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="120">
+                                        <col width="220">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>면적(평)</th>
+                                            <th>소재지 - 시&middot;군&middot;구 <span class="required">*</span></th>
+                                            <th>소재지 - 읍&middot;면&middot;동 이하 <span class="required">*</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>합계</td>
+                                            <td class="taright"><span id="total-land-area">0</span></td>
+                                            <td colspan="2">※ 종합표(Ⅵ) 5년차 재배면적과 일치 확인</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>자가 소유</td>
+                                            <td><input type="number" class="area-input" min="0" step="any" placeholder="0"></td>
+                                            <td><input type="text" placeholder="예: 경상북도 ○○군"></td>
+                                            <td><input type="text" placeholder="예: ○○면 ○○리"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>임차 보유 (계약 완료)</td>
+                                            <td><input type="number" class="area-input" min="0" step="any" placeholder="0"></td>
+                                            <td><input type="text" placeholder="예: 경상북도 ○○군"></td>
+                                            <td><input type="text" placeholder="예: ○○면 ○○리"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>매입&middot;임차 희망 (예정)</td>
+                                            <td><input type="number" class="area-input" min="0" step="any" placeholder="0"></td>
+                                            <td><input type="text" placeholder="예: 경상북도 ○○군"></td>
+                                            <td><input type="text" placeholder="예: ○○면 ○○리 (임차 협의 중)"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>기타</td>
+                                            <td><input type="number" class="area-input" min="0" step="any" placeholder="0"></td>
+                                            <td><input type="text" placeholder="시·군·구 입력"></td>
+                                            <td><input type="text" placeholder="상세 위치 입력"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 보유·확보 계획이 둘 이상인 경우 모두 기재하며, 소재지는 시·군·구와 읍·면·동 이하를 나누어 기재합니다.<br/>
+                                <span class="info">※ [필수] 읍·면·동 이하 칸은 「○○면 ○○리」처럼 읍·면·동 단위로 시작해야 배점을 받으며, 소재지 전체 미기재 시 부적격(서면평가 제외) 처리됩니다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="step0203" class="gap_top"><span>03</span>영농 동기 및 5개년 발전 경로</h3>
+                    <div class="response_table">
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(가) 영농 동기 및 비전&middot;목표 <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 영농 창업 배경(승계·신규 진입)과 의지, 5년 후 달성하고자 하는 목표를 기재합니다. (권장 400자 내외)<br/>
+                                <span class="info">※ 거주 이전·주거 확보, 작목반·지역 공동체 참여 등 지역 정착 준비 내용을 함께 기재하세요.</span>
+                            </div>
+                        </div>
+
+                        <div class="colspan4">
+                            <div class="tbl_wrap">
+                                <div class="sub_tit">(나) 5개년 발전 경로 (단계별 계획) <div class="word_cnt"><span>0</span>자</div></div>
+                                <div class="txtarea">
+                                    <textarea class="auto-textarea" placeholder="내용을 입력하세요."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="colspan4 gap_minus">
+                            <div class="guide">
+                                <span class="material-symbols-outlined">check_circle</span> 연차별 영농규모 확대·매출 증가·자금 운용의 단계화와 시계열 정합성을 단계별로 서술합니다. (권장 600자 내외)<br/>
+                                <span class="info">※ 판매처·자금 세부 내역은 Ⅲ·Ⅳ 시트에 기재합니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <div>
+                        <button type="button" class="type3" onclick="location.href='user-step01.html'"><span class="material-symbols-outlined">arrow_back</span> 이전 단계로</button>
+                    </div>
+                    <div>
+                        <button type="button" class="type2"><span class="material-symbols-outlined">save</span> 임시저장</button>
+                        <button type="button" onclick="location.href='user-step03.html'">다음 단계로 <span class="material-symbols-outlined">arrow_forward</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
