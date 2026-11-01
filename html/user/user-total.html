@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>평가관리시스템</title>
-    <link rel="preload" as="style" crossorigin="anonymous"  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <title>평가관리시스템 - 영농계획서 종합본</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
     <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close,print,send" />
     <link rel="stylesheet" href="inc/css/common.min.css" />
     <link rel="stylesheet" href="inc/css/layout.min.css" />
     <script src="inc/js/script.js"></script>
@@ -15,7 +15,7 @@
 <body>
     <header>
         <div>
-            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div><h1>청년농업인 영농정착지원사업 평가시스템</h1></div>
             <div class="year">2026년도</div>
         </div>
         <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
@@ -38,103 +38,103 @@
             <ul>
                 <li>
                     <span class="stit">신청 현황</span>
-                    <div><span class="material-symbols-outlined">dashboard</span><a href="javascript:void(0)" class="d1">신청현황 대시보드</a></div>
+                    <div><span class="material-symbols-outlined">dashboard</span><a href="index.html" class="d1">신청현황 대시보드</a></div>
                 </li>
                 <li>
                     <span class="stit">영농계획서 작성(6단계)</span>
                     <div>
                         <div class="ring">
-                            <div id="step1" class="svg-ring-container" data-total="6" data-current="3" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
+                            <div id="step1" class="svg-ring-container" data-total="6" data-current="6" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="#step0101">인적사항</a></li>
-                            <li><a href="#step0102">신청자 유형 및 영농경력</a></li>
-                            <li class="comp"><a href="#step0103">가구 구성</a></li>
-                            <li class="comp"><a href="#step0104">영농 품목 정보</a></li>
-                            <li><a href="#step0105">영농 규모</a></li>
-                            <li><a href="#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
+                            <li class="comp"><a href="user-step01.html#step0101">인적사항</a></li>
+                            <li class="comp"><a href="user-step01.html#step0102">신청자 유형 및 영농경력</a></li>
+                            <li class="comp"><a href="user-step01.html#step0103">가구 구성</a></li>
+                            <li class="comp"><a href="user-step01.html#step0104">영농 품목 정보</a></li>
+                            <li class="comp"><a href="user-step01.html#step0105">영농 규모</a></li>
+                            <li class="comp"><a href="user-step01.html#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="ring">
-                            <div id="step2" class="svg-ring-container" data-total="3" data-current="1" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
+                            <div id="step2" class="svg-ring-container" data-total="3" data-current="3" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="javascript:void(0)">주품목 선정 근거</a></li>
-                            <li><a href="javascript:void(0)">영농기반 소재지</a></li>
-                            <li><a href="javascript:void(0)">영농 동기 및 5개년 발전 경로</a></li>
+                            <li class="comp"><a href="user-step02.html#step0201">주품목 선정 근거</a></li>
+                            <li class="comp"><a href="user-step02.html#step0202">영농기반 소재지</a></li>
+                            <li class="comp"><a href="user-step02.html#step0203">영농 동기 및 5개년 발전 경로</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="ring">
-                            <div id="step3" class="svg-ring-container" data-total="4" data-current="3" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
+                            <div id="step3" class="svg-ring-container" data-total="4" data-current="4" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="javascript:void(0)">영농 방법</a></li>
-                            <li class="comp"><a href="javascript:void(0)">영농 지역 선정 타당성</a></li>
-                            <li class="comp"><a href="javascript:void(0)">판매 계획</a></li>
-                            <li><a href="javascript:void(0)">판매처 확보 방안</a></li>
+                            <li class="comp"><a href="user-step03.html#step0301">영농 방법</a></li>
+                            <li class="comp"><a href="user-step03.html#step0302">영농 지역 선정 타당성</a></li>
+                            <li class="comp"><a href="user-step03.html#step0303">판매 계획</a></li>
+                            <li class="comp"><a href="user-step03.html#step0304">판매처 확보 방안</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="ring">
-                            <div id="step4" class="svg-ring-container" data-total="3" data-current="2" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
+                            <div id="step4" class="svg-ring-container" data-total="3" data-current="3" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="javascript:void(0)">자금 조달 내역</a></li>
-                            <li class="comp"><a href="javascript:void(0)">자금 상환 계획</a></li>
-                            <li><a href="javascript:void(0)">정책자금 미승인 대응 시나리오</a></li>
+                            <li class="comp"><a href="user-step04.html#step0401">자금 조달 내역</a></li>
+                            <li class="comp"><a href="user-step04.html#step0402">자금 상환 계획</a></li>
+                            <li class="comp"><a href="user-step04.html#step0403">정책자금 미승인 대응 시나리오</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="ring">
-                            <div id="step5" class="svg-ring-container" data-total="4" data-current="1" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
+                            <div id="step5" class="svg-ring-container" data-total="4" data-current="4" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="javascript:void(0)">농업소득 성장 계획</a></li>
-                            <li><a href="javascript:void(0)">안정기 가구 생활비 확보 계획</a></li>
-                            <li><a href="javascript:void(0)">적자 발생 시 대응 방안</a></li>
-                            <li><a href="javascript:void(0)">영농 정착 후 중장기 비전</a></li>
+                            <li class="comp"><a href="user-step05.html#step0501">농업소득 성장 계획</a></li>
+                            <li class="comp"><a href="user-step05.html#step0502">안정기 가구 생활비 확보 계획</a></li>
+                            <li class="comp"><a href="user-step05.html#step0503">적자 발생 시 대응 방안</a></li>
+                            <li class="comp"><a href="user-step05.html#step0504">영농 정착 후 중장기 비전</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="ring">
-                            <div id="step6" class="svg-ring-container" data-total="3" data-current="2" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
+                            <div id="step6" class="svg-ring-container" data-total="3" data-current="3" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
                         </div>
                     </div>
                     <div class="ring_cnt">
                         <ul>
-                            <li class="comp"><a href="javascript:void(0)">5개년 종합표</a></li>
-                            <li class="comp"><a href="javascript:void(0)">수치 산출 근거</a></li>
-                            <li><a href="javascript:void(0)">비목 분류별 5개년 경영비 산정</a></li>
+                            <li class="comp"><a href="user-step06.html#step0601">5개년 종합표</a></li>
+                            <li class="comp"><a href="user-step06.html#step0602">수치 산출 근거</a></li>
+                            <li class="comp"><a href="user-step06.html#step0603">비목 분류별 5개년 경영비 산정</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <span class="stit">점검 및 종합본</span>
-                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="javascript:void(0)" class="d1">제출 전 자가점검</a></div>
-                    <div><span class="material-symbols-outlined">all_inbox</span><a href="javascript:void(0)" class="d1">영농계획서 종합본</a></div>
+                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="user-self.html" class="d1">제출 전 자가점검</a></div>
+                    <div><span class="material-symbols-outlined">all_inbox</span><a href="user-total.html" class="d1 active_menu">영농계획서 종합본</a></div>
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
         </div>
         
-        <div class="container left-panel">
+        <div class="container">
             <div class="ap_content">
                 <div class="breadcrumb">
                     <ul>
                         <li>홈</li>
-                        <li>영농계획서 작성(6단계)</li>
+                        <li>점검 및 종합본</li>
                         <li>영농계획서 종합본</li>
                     </ul>
                 </div>
@@ -970,6 +970,16 @@
                                 신청자: 홍길동<span class="">(서명 또는 인)</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <div>
+                        <button type="button" class="type3" onclick="location.href='user-self.html'"><span class="material-symbols-outlined">arrow_back</span> 자가점검표로 돌아가기</button>
+                    </div>
+                    <div>
+                        <button type="button" class="type2" onclick="window.print()"><span class="material-symbols-outlined">print</span> 인쇄하기</button>
+                        <button type="button" onclick="alert('영농계획서가 성공적으로 최종 제출되었습니다.'); location.href='index.html';"><span class="material-symbols-outlined">send</span> 최종 제출하기</button>
                     </div>
                 </div>
             </div>

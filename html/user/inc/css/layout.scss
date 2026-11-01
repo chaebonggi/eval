@@ -908,6 +908,10 @@ section{
                                             text-align: right;
                                         }
                                     }
+                                    strong {
+                                        font-size: 1.3rem;
+                                        font-weight: 600;
+                                    }
                                     span{
                                         font-size: 1.2rem;
                                     }
@@ -953,6 +957,10 @@ section{
                                         &.bg_load,
                                         &.bg_load input{
                                             background-color: rgba(82, 196, 26, 0.08); // 은은한 연두색 배경
+                                        }
+                                        strong {
+                                            font-size: 1.3rem;
+                                            font-weight: 600;
                                         }
                                         span, a{
                                             font-size: 1.2rem;
@@ -1622,5 +1630,177 @@ section{
                 }
             }
         }
+    }
+}
+.label_status {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+
+    &.comp {
+        background-color: var(--color-guide-border);
+        color: var(--color-guide-text);
+    }
+
+    &.warn {
+        background-color: var(--color-warning-back);
+        color: var(--color-warning);
+    }
+
+    &.danger {
+        background-color: var(--color-danger-back);
+        color: var(--color-danger);
+    }
+
+    &.info {
+        background-color: var(--color-lightblue2);
+        color: var(--color-primary);
+    }
+}
+.btn_move_link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.progress_bar_wrap {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+
+    .progress_bar_fill {
+        height: 100%;
+        background-color: var(--color-primary);
+        border-radius: 4px;
+    }
+}
+
+.result_success_text {
+    background-color: var(--color-guide-back);
+    color: var(--color-guide-text);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.result_danger_text {
+    background-color: var(--color-danger-back);
+    color: var(--color-danger);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.info_success {
+    color: var(--color-success) !important;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.guide_detail_desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.align_right {
+    margin-left: auto !important;
+}
+
+.gap_right_sm {
+    margin-right: 8px !important;
+}
+
+.snb_wrap ul li div a.active_menu {
+    color: var(--color-comp) !important;
+    font-weight: 600;
+}
+.tbl_divider_th {
+    background-color: var(--color-lightblue2) !important;
+    font-weight: 600 !important;
+}
+// ==========================================
+// 인쇄 전용 스타일 (@media print)
+// ==========================================
+@media print {
+    header,
+    .snb_wrap,
+    .breadcrumb,
+    .btn_wrap {
+        display: none !important;
+    }
+
+    html,
+    body {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100% !important;
+        overflow: visible !important;
+        background-color: #fff !important;
+        font-size: 10px;
+    }
+
+    section {
+        position: static !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    .container {
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+        display: block !important;
+
+        .ap_content {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+
+            .contents_wrap {
+                box-shadow: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+            }
+        }
+    }
+
+    h2, h3, h4 {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    .tbl_wrap,
+    .response_table > div,
+    .guide,
+    tr,
+    .sign_wrap {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .sub_tit {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 }

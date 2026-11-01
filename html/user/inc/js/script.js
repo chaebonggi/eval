@@ -4,16 +4,18 @@ $(document).ready(function() {
     $('.usr_menu > .material-symbols-outlined').toggleClass('rotate');
   });
 
-  // 서브메뉴 아코디언 토글 (인라인 style 대신 class="on" 제어)
+  // 서브메뉴 아코디언 토글 (서브메뉴가 있는 스텝 메뉴만 토글하고, 단독 메뉴는 정상 이동)
   $('a.d1').click(function(e) {
-    e.preventDefault();
     const $targetCnt = $(this).closest('.ring').parent().next('.ring_cnt');
 
-    if ($targetCnt.hasClass('on')) {
-      $targetCnt.removeClass('on');
-    } else {
-      $('.ring_cnt').removeClass('on');
-      $targetCnt.addClass('on');
+    if ($targetCnt.length > 0) {
+      e.preventDefault();
+      if ($targetCnt.hasClass('on')) {
+        $targetCnt.removeClass('on');
+      } else {
+        $('.ring_cnt').removeClass('on');
+        $targetCnt.addClass('on');
+      }
     }
   });
 
