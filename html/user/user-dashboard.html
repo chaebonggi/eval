@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 신청현황 대시보드</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stat_minus_1,logout,person,dashboard,playlist_add_check,all_inbox,task_alt,chevron_right,chevron_left,check_circle,info,arrow_forward,save,arrow_back,close,verified,error,warning" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착지원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr01">지원신청자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">신청 현황</span>
+                    <div><span class="material-symbols-outlined">dashboard</span><a href="user-dashboard.html" class="d1 active_menu">신청현황 대시보드</a></div>
+                </li>
+                <li>
+                    <span class="stit">영농계획서 작성(6단계)</span>
+                    <div>
+                        <div class="ring">
+                            <div id="step1" class="svg-ring-container" data-total="6" data-current="0" data-step="1"></div><a href="javascript:void(0)" class="d1">신청자 기본정보</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step01.html#step0101">인적사항</a></li>
+                            <li><a href="user-step01.html#step0102">신청자 유형 및 영농경력</a></li>
+                            <li><a href="user-step01.html#step0103">가구 구성</a></li>
+                            <li><a href="user-step01.html#step0104">영농 품목 정보</a></li>
+                            <li><a href="user-step01.html#step0105">영농 규모</a></li>
+                            <li><a href="user-step01.html#step0106">5년차 목표 규모 시설&middot;노동력 운영 계획</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step2" class="svg-ring-container" data-total="3" data-current="0" data-step="2"></div><a href="javascript:void(0)" class="d1">영농진입 준비도</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step02.html#step0201">주품목 선정 근거</a></li>
+                            <li><a href="user-step02.html#step0202">영농기반 소재지</a></li>
+                            <li><a href="user-step02.html#step0203">영농 동기 및 5개년 발전 경로</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step3" class="svg-ring-container" data-total="4" data-current="0" data-step="3"></div><a href="javascript:void(0)" class="d1">영농수행 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step03.html#step0301">영농 방법</a></li>
+                            <li><a href="user-step03.html#step0302">영농 지역 선정 타당성</a></li>
+                            <li><a href="user-step03.html#step0303">판매 계획</a></li>
+                            <li><a href="user-step03.html#step0304">판매처 확보 방안</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step4" class="svg-ring-container" data-total="3" data-current="0" data-step="4"></div><a href="javascript:void(0)" class="d1">자금조달&middot;상환</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step04.html#step0401">자금 조달 내역</a></li>
+                            <li><a href="user-step04.html#step0402">자금 상환 계획</a></li>
+                            <li><a href="user-step04.html#step0403">정책자금 미승인 대응 시나리오</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step5" class="svg-ring-container" data-total="4" data-current="0" data-step="5"></div><a href="javascript:void(0)" class="d1">정착 계획</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step05.html#step0501">농업소득 성장 계획</a></li>
+                            <li><a href="user-step05.html#step0502">안정기 가구 생활비 확보 계획</a></li>
+                            <li><a href="user-step05.html#step0503">적자 발생 시 대응 방안</a></li>
+                            <li><a href="user-step05.html#step0504">영농 정착 후 중장기 비전</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="ring">
+                            <div id="step6" class="svg-ring-container" data-total="3" data-current="0" data-step="6"></div><a href="javascript:void(0)" class="d1">5개년 종합표</a>
+                        </div>
+                    </div>
+                    <div class="ring_cnt">
+                        <ul>
+                            <li><a href="user-step06.html#step0601">5개년 종합표</a></li>
+                            <li><a href="user-step06.html#step0602">수치 산출 근거</a></li>
+                            <li><a href="user-step06.html#step0603">비목 분류별 5개년 경영비 산정</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="stit">점검 및 종합본</span>
+                    <div><span class="material-symbols-outlined">playlist_add_check</span><a href="user-self.html" class="d1">제출 전 자가점검</a></div>
+                    <div><span class="material-symbols-outlined">all_inbox</span><a href="user-total.html" class="d1">영농계획서 종합본</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content dashboard_page">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>신청현황 대시보드</li>
+                    </ul>
+                </div>
+                
+                <div class="flex jcbetween aibottom">
+                    <div>
+                        <h2>신청현황 대시보드</h2>
+                        <p class="dash_title_desc">영농계획서 작성부터 제출 전 점검까지 한곳에서 확인하세요.</p>
+                    </div>
+                </div>
+
+                <div class="dash_notice_box">
+                    파일로 직접 연 경우 페이지별 저장소가 분리될 수 있습니다. 같은 웹서버에서 저장한 내용을 기준으로 현황이 연결됩니다.
+                </div>
+
+                <div class="dashboard_wrap">
+                    <!-- 상단 히어로 배너 -->
+                    <div class="dash_banner">
+                        <div class="banner_info">
+                            <span class="sub">나의 영농계획서</span>
+                            <h3>영농의 시작을 준비하세요.</h3>
+                            <p>신청자 기본정보부터 이어서 작성해보세요. 각 단계에서 임시저장한 내용이 반영됩니다.</p>
+                            <div class="btn_group">
+                                <a href="user-step01.html" class="btn_main">이어서 작성하기 <span class="material-symbols-outlined">arrow_forward</span></a>
+                                <a href="user-total.html" class="btn_sub">종합본 미리보기</a>
+                            </div>
+                        </div>
+                        <div class="banner_progress">
+                            <div class="progress_circle" style="--percent: 10%;">
+                                <span class="rate">10%</span>
+                                <span class="txt">작성 진행률</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4대 서머리 카드 -->
+                    <div class="summary_grid">
+                        <div class="summary_card">
+                            <span class="label">작성 항목</span>
+                            <span class="val">0 / 23</span>
+                            <span class="desc">입력 그룹 기준</span>
+                        </div>
+                        <div class="summary_card">
+                            <span class="label">필수 기재</span>
+                            <span class="val">0 / 4</span>
+                            <span class="desc">제출 전 확인 항목</span>
+                        </div>
+                        <div class="summary_card">
+                            <span class="label">확인 필요</span>
+                            <span class="val">0건</span>
+                            <span class="desc">점검 대기 10건</span>
+                        </div>
+                        <div class="summary_card">
+                            <span class="label">최근 임시저장</span>
+                            <span class="val date">10월 30일 오후 03:03</span>
+                            <span class="desc">5개 단계 저장</span>
+                        </div>
+                    </div>
+
+                    <!-- 메인 스텝 리스트 및 사이드 패널 -->
+                    <div class="dash_main_grid">
+                        <!-- 좌측: 6개 스텝 카드 목록 -->
+                        <div class="step_cards_area">
+                            <div class="area_header">
+                                <h4>영농계획서 작성</h4>
+                                <span>0 / 6단계 항목 충족</span>
+                            </div>
+                            <div class="step_card_list">
+                                <!-- STEP 01 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 01</span>
+                                        <span class="step_state">작성 전</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>신청자 기본정보</h5>
+                                        <p>인적사항·가구 구성·품목·영농 규모</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 6개 항목</span>
+                                        <a href="user-step01.html" class="link">작성하기 &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 02 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 02</span>
+                                        <span class="step_state ing">작성 중</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>영농진입 준비도</h5>
+                                        <p>품목 선정 근거·소재지·영농 동기</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 3개 항목</span>
+                                        <a href="user-step02.html" class="link">이어서 작성 &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 03 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 03</span>
+                                        <span class="step_state ing">작성 중</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>영농수행 계획</h5>
+                                        <p>재배·사육 방법·지역 타당성·판매 계획</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 4개 항목</span>
+                                        <a href="user-step03.html" class="link">이어서 작성 &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 04 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 04</span>
+                                        <span class="step_state ing">작성 중</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>자금조달&middot;상환</h5>
+                                        <p>조달 내역·상환 재원·미승인 대응</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 3개 항목</span>
+                                        <a href="user-step04.html" class="link">이어서 작성 &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 05 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 05</span>
+                                        <span class="step_state ing">작성 중</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>정착 계획</h5>
+                                        <p>소득 성장·생활비·적자 대응·비전</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 4개 항목</span>
+                                        <a href="user-step05.html" class="link">이어서 작성 &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 06 -->
+                                <div class="step_card">
+                                    <div class="card_top">
+                                        <span class="step_badge">STEP 06</span>
+                                        <span class="step_state ing">작성 중</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <h5>5개년 종합표</h5>
+                                        <p>연차별 규모·소득·산출 근거·경영비</p>
+                                    </div>
+                                    <div class="card_bottom">
+                                        <span class="cnt">0 / 3개 항목</span>
+                                        <a href="user-step06.html" class="link">이어서 작성 &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_foot">
+                                진행률은 저장한 입력 그룹의 기재 상태입니다. 평가 점수나 신청서 접수 상태를 의미하지 않습니다.
+                            </div>
+                        </div>
+
+                        <!-- 우측: 필수 기재 점검 & 신청자 정보 요약 패널 -->
+                        <div class="side_panel_area">
+                            <!-- 필수 기재 점검 패널 -->
+                            <div class="panel_box">
+                                <div class="panel_head">
+                                    <h5>필수 기재 점검</h5>
+                                    <span>4항목</span>
+                                </div>
+                                <div class="panel_list">
+                                    <ul>
+                                        <li>
+                                            <span class="title">영농형태</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">세부 품목&middot;축종</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">영농기반 소재지</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">5년차 영농 규모</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel_btn_wrap">
+                                    <a href="user-self.html">제출 전 자가점검 &rarr;</a>
+                                </div>
+                            </div>
+
+                            <!-- 신청자 정보 패널 -->
+                            <div class="panel_box">
+                                <div class="panel_head">
+                                    <h5>신청자 정보</h5>
+                                </div>
+                                <div class="panel_list">
+                                    <ul>
+                                        <li>
+                                            <span class="title">성명</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">신청자 유형</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">주품목</span>
+                                            <span class="status">미기재</span>
+                                        </li>
+                                        <li>
+                                            <span class="title">작성 상태</span>
+                                            <span class="status active">작성 중</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel_btn_wrap">
+                                    <a href="user-step01.html">기본정보 수정 &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
