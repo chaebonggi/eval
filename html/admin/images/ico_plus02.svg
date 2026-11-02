@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_타이틀" data-name="타이틀" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.15 14.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M12.65,8.57H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h11.15c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5Z"/>
+  <path class="cls-1" d="M5.57,12.65V1.5c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v11.15c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5Z"/>
+</svg>
