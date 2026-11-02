@@ -793,72 +793,10 @@ input.krds-input {
         color: var(--color-primary);
     }
 }
+
 // ==========================================
 // 상세/등록 폼 그리드 및 체크박스/라디오
 // ==========================================
-.info_wrap {
-    .tit {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--color-text);
-    }
-
-    .dashed-hr {
-        display: block;
-        width: 100%;
-        border-bottom: 1px dashed var(--color-border);
-        margin: 28px 0;
-    }
-
-    .respon-table {
-        display: grid;
-        grid-template-columns: 14rem calc(50% - 14rem) 14rem calc(50% - 14rem);
-        background-color: var(--color-border);
-        border: 1px solid var(--color-border);
-        border-radius: 6px;
-        overflow: hidden;
-        gap: 1px;
-
-        .table-item {
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            font-size: 1.35rem;
-            word-break: keep-all;
-            background-color: var(--color-white);
-
-            &:nth-child(odd) {
-                background-color: #f1f5f9;
-                font-weight: 700;
-                color: #232323;
-            }
-
-            &.merge-rest {
-                grid-column: span 3;
-                background-color: var(--color-white);
-            }
-
-            &.merge-all {
-                grid-column: 1 / -1;
-                background-color: var(--color-white);
-            }
-
-            label {
-                font-size: 1.35rem;
-                font-weight: inherit;
-                color: inherit;
-            }
-
-            .txt_static {
-                font-size: 1.4rem;
-                font-weight: 600;
-                color: var(--color-text);
-            }
-        }
-    }
-}
-
-// KRDS 폼 체크 / 라디오 정렬
 .info_wrap {
     .tit {
         font-size: 1.8rem;

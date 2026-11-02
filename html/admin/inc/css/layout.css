@@ -868,58 +868,6 @@ input.krds-input::placeholder {
   color: var(--color-text);
 }
 
-.info_wrap .tit {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-.info_wrap .dashed-hr {
-  display: block;
-  width: 100%;
-  border-bottom: 1px dashed var(--color-border);
-  margin: 28px 0;
-}
-.info_wrap .respon-table {
-  display: grid;
-  grid-template-columns: 14rem calc(50% - 14rem) 14rem calc(50% - 14rem);
-  background-color: var(--color-border);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  overflow: hidden;
-  gap: 1px;
-}
-.info_wrap .respon-table .table-item {
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  font-size: 1.35rem;
-  word-break: keep-all;
-  background-color: var(--color-white);
-}
-.info_wrap .respon-table .table-item:nth-child(odd) {
-  background-color: #f1f5f9;
-  font-weight: 700;
-  color: #232323;
-}
-.info_wrap .respon-table .table-item.merge-rest {
-  grid-column: span 3;
-  background-color: var(--color-white);
-}
-.info_wrap .respon-table .table-item.merge-all {
-  grid-column: 1/-1;
-  background-color: var(--color-white);
-}
-.info_wrap .respon-table .table-item label {
-  font-size: 1.35rem;
-  font-weight: inherit;
-  color: inherit;
-}
-.info_wrap .respon-table .table-item .txt_static {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-text);
-}
-
 .krds-check-area {
   display: flex;
   align-items: center;

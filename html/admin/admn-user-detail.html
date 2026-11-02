@@ -40,7 +40,7 @@
             <ul>
                 <li>
                     <span class="stit">회원 관리</span>
-                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list_3.html" class="d1 active">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list_4.html" class="d1 active">대상자 관리</a></div>
                     <div><span class="material-symbols-outlined">manage_accounts</span><a href="javascript:void(0)" class="d1">평가위원 관리</a></div>
                 </li>
                 <li>
@@ -83,12 +83,12 @@
                         <div class="respon-table">
                             <div class="table-item"><label for="applyNo">접수번호</label></div>
                             <div class="table-item merge-rest">
-                                <input type="text" id="applyNo" name="applyNo" class="krds-input small w200" value="7954" placeholder="접수번호">
+                                <input type="text" id="applyNo" name="applyNo" class="krds-input small w200" value="7954" placeholder="접수번호" readonly>
                             </div>
 
                             <div class="table-item"><label for="sido">시도</label></div>
                             <div class="table-item">
-                                <select class="krds-form-select small w200" id="sido" name="sido">
+                                <select class="krds-form-select small w200" id="sido" name="sido" disabled>
                                     <option value="">선택</option>
                                     <option value="경기" selected>경기</option>
                                     <option value="강원">강원</option>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="table-item"><label for="sigungu">시군구</label></div>
                             <div class="table-item">
-                                <select class="krds-form-select small w200" id="sigungu" name="sigungu">
+                                <select class="krds-form-select small w200" id="sigungu" name="sigungu" disabled>
                                     <option value="">선택</option>
                                     <option value="수원시" selected>수원시</option>
                                     <option value="시흥시">시흥시</option>
@@ -112,33 +112,34 @@
 
                             <div class="table-item"><label for="identNo">식별번호</label></div>
                             <div class="table-item merge-rest">
-                                <input type="text" id="identNo" name="identNo" class="krds-input small w300" value="경기-수원시-001" placeholder="식별번호">
+                                <input type="text" id="identNo" name="identNo" class="krds-input small w300" value="경기-수원시-001" placeholder="식별번호" readonly>
                             </div>
 
                             <div class="table-item"><label for="userName">이름</label></div>
                             <div class="table-item merge-rest">
-                                <input type="text" id="userName" name="userName" class="krds-input small w200" value="이정은" placeholder="이름">
+                                <input type="text" id="userName" name="userName" class="krds-input small w200" value="이정은" placeholder="이름" readonly>
                             </div>
 
                             <div class="table-item"><label for="userId">아이디</label></div>
                             <div class="table-item merge-rest">
-                                <input type="text" id="userId" name="userId" class="krds-input small w200" value="ep0001" placeholder="아이디">
+                                <input type="text" id="userId" name="userId" class="krds-input small w200" value="ep0001" placeholder="아이디" readonly>
                             </div>
 
+                            <!-- 패스워드: 수정 가능 -->
                             <div class="table-item"><label for="userPw">패스워드</label></div>
                             <div class="table-item merge-rest">
-                                <input type="password" id="userPw" name="userPw" class="krds-input small w250" placeholder="비밀번호">
+                                <input type="password" id="userPw" name="userPw" class="krds-input small w250" placeholder="비밀번호 입력">
                             </div>
 
                             <div class="table-item">성별</div>
                             <div class="table-item merge-rest">
                                 <div class="krds-check-area">
                                     <div class="krds-form-check">
-                                        <input type="radio" name="gender" id="gender_M" value="M" checked>
+                                        <input type="radio" name="gender" id="gender_M" value="M" checked disabled>
                                         <label for="gender_M">남</label>
                                     </div>
                                     <div class="krds-form-check">
-                                        <input type="radio" name="gender" id="gender_F" value="F">
+                                        <input type="radio" name="gender" id="gender_F" value="F" disabled>
                                         <label for="gender_F">여</label>
                                     </div>
                                 </div>
@@ -146,23 +147,24 @@
 
                             <div class="table-item"><label for="birthDate">생년월일</label></div>
                             <div class="table-item merge-rest">
-                                <input type="text" id="birthDate" name="birthDate" class="krds-input small w200" value="1988-09-28" placeholder="YYYY-MM-DD">
+                                <input type="text" id="birthDate" name="birthDate" class="krds-input small w200" value="1988-09-28" placeholder="YYYY-MM-DD" readonly>
                             </div>
 
                             <div class="table-item">평가대상</div>
                             <div class="table-item merge-rest">
                                 <div class="krds-check-area">
                                     <div class="krds-form-check">
-                                        <input type="radio" name="targetYn" id="targetYn_Y" value="Y" checked>
+                                        <input type="radio" name="targetYn" id="targetYn_Y" value="Y" checked disabled>
                                         <label for="targetYn_Y">Y</label>
                                     </div>
                                     <div class="krds-form-check">
-                                        <input type="radio" name="targetYn" id="targetYn_N" value="N">
+                                        <input type="radio" name="targetYn" id="targetYn_N" value="N" disabled>
                                         <label for="targetYn_N">N</label>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- 평가그룹: 수정 가능 -->
                             <div class="table-item"><label for="evalGroup">평가그룹</label></div>
                             <div class="table-item merge-rest">
                                 <select class="krds-form-select small w250" id="evalGroup" name="evalGroup">
@@ -181,7 +183,7 @@
 
                         <div class="dashed-hr"></div>
 
-                        <!-- 2. 권한정보 -->
+                        <!-- 2. 권한정보 (수정 가능) -->
                         <div class="flex jcs mb10">
                             <p class="tit">권한정보</p>
                         </div>
@@ -199,7 +201,7 @@
 
                         <!-- 3. 하단 액션 버튼 -->
                         <div class="btn-group jcc mt30">
-                            <button type="button" class="krds-btn small nomal" id="btnList" onclick="location.href='admn-user-list_3.html'">목록</button>
+                            <button type="button" class="krds-btn small nomal" id="btnList" onclick="location.href='admn-user-list_4.html'">목록</button>
                             <button type="button" class="krds-btn small search" id="btnSubmit">수정</button>
                             <button type="button" class="krds-btn small type02" id="btnDelete">삭제</button>
                         </div>
