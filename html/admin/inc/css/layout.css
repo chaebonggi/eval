@@ -993,3 +993,65 @@ input.krds-input::placeholder {
     grid-column: span 1;
   }
 }
+.eval_legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.35rem;
+  color: #444;
+}
+.eval_legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eval_sym {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  background: none !important;
+  border: none !important;
+}
+.eval_sym.sym_done {
+  color: #0ca649;
+}
+.eval_sym.sym_temp {
+  color: #f59f00;
+  font-size: 1.5rem;
+}
+.eval_sym.sym_none {
+  color: #e03131;
+  font-size: 1.5rem;
+}
+
+.eval_summary_cnt {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5rem;
+  color: #333;
+}
+.eval_summary_cnt span strong {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.eval_summary_cnt span.total strong {
+  color: #111;
+}
+.eval_summary_cnt span.comp strong {
+  color: #0ca649;
+}
+.eval_summary_cnt span.ing strong {
+  color: #e03131;
+}
+.eval_summary_cnt .bar {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: #d1d5db;
+}

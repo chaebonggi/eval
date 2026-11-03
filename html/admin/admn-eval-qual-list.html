@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 정성평가 관리</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inc/css/krds.min.css" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/krds.min.js"></script>
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr03">관리자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">회원 관리</span>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list.html" class="d1">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">manage_accounts</span><a href="admn-evaluator-list.html" class="d1">평가위원 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">평가 관리</span>
+                    <div><span class="material-symbols-outlined">task_alt</span><a href="admn-eval-qual-list.html" class="d1 active">정성평가 관리</a></div>
+                    <div><span class="material-symbols-outlined">person_search</span><a href="admn-eval-score-list.html" class="d1">대상자별 평가점수</a></div>
+                </li>
+                <li>
+                    <span class="stit">서류 관리</span>
+                    <div><span class="material-symbols-outlined">app_registration</span><a href="admn-doc-list.html" class="d1">평가위원 제출서류</a></div>
+                </li>
+                <li>
+                    <span class="stit">통계</span>
+                    <div><span class="material-symbols-outlined">web</span><a href="admn-stat-summary.html" class="d1">전체 평가요약</a></div>
+                    <div><span class="material-symbols-outlined">travel_explore</span><a href="admn-stat-region.html" class="d1">지역별 통계</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content full_width">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>평가 관리</li>
+                        <li id="breadcrumbActive">정성평가 관리</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>정성평가</h2>
+                </div>
+                <div class="contents_wrap">
+                    <!-- 상단 필터 & 현황 요약 영역 -->
+                    <div class="search_wrap mb20">
+                        <div class="flex jcs alc">
+                            <div class="flex alc gap-10">
+                                <label for="filterEvalGroup" class="fw700">평가그룹</label>
+                                <select class="krds-form-select small w160" id="filterEvalGroup">
+                                    <option value="">전체</option>
+                                    <option value="EP1">EP1</option>
+                                    <option value="EP2">EP2</option>
+                                    <option value="EP3">EP3</option>
+                                    <option value="EP4">EP4</option>
+                                </select>
+                            </div>
+                            <div class="eval_summary_cnt">
+                                <span class="total">전체 <strong>400</strong></span>
+                                <i class="bar"></i>
+                                <span class="comp">완료 <strong>200</strong></span>
+                                <i class="bar"></i>
+                                <span class="ing">미완료 <strong>200</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 범례 및 컨트롤 버튼 영역 -->
+                    <div class="flex jcs alc mb10">
+                        <div class="eval_legend">
+                            <span><span class="eval_sym sym_done mr4">○</span> 전체 최종 제출</span>
+                            <span><span class="eval_sym sym_temp mr4">△</span> 해당 대상자 임시저장</span>
+                            <span><span class="eval_sym sym_none mr4">✕</span> 미저장</span>
+                        </div>
+                        <div class="btn-group">
+                            <select class="krds-form-select small w100" id="pageUnit" title="목록 건수 선택">
+                                <option value="10">10개</option>
+                                <option value="20">20개</option>
+                                <option value="30">30개</option>
+                                <option value="50">50개</option>
+                            </select>
+                            <button type="button" class="krds-btn excel" id="btnExcelDownload">
+                                <i class="svg-icon ico-download right"></i> 엑셀 다운로드
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 정성평가 현황 데이터 그리드 -->
+                    <div class="table_wrap">
+                        <div class="table-container">
+                            <div class="krds-table-wrap tbl-type03">
+                                <table class="tbl col data min-full">
+                                    <caption>정성평가 진행현황 목록 표 (번호, 식별번호, 평가그룹, 평가위원A, 평가위원B, 평가위원C, 평가위원D, 상태)</caption>
+                                    <colgroup>
+                                        <col style="width: 7rem;">
+                                        <col style="width: 20rem;">
+                                        <col style="width: 14rem;">
+                                        <col style="width: 13rem;">
+                                        <col style="width: 13rem;">
+                                        <col style="width: 13rem;">
+                                        <col style="width: 13rem;">
+                                        <col style="width: 12rem;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">식별번호</th>
+                                            <th scope="col">평가그룹</th>
+                                            <th scope="col">평가위원A</th>
+                                            <th scope="col">평가위원B</th>
+                                            <th scope="col">평가위원C</th>
+                                            <th scope="col">평가위원D</th>
+                                            <th scope="col">상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>경기-수원시-001</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>경기-수원시-002</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>경기-수원시-003</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_temp" title="임시저장">△</span></td>
+                                            <td><span class="eval_sym sym_none" title="미저장">✕</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>경기-수원시-004</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>경기-수원시-005</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>경기-수원시-006</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_temp" title="임시저장">△</span></td>
+                                            <td><span class="eval_sym sym_none" title="미저장">✕</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>경기-수원시-007</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>경기-수원시-008</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>경기-수원시-009</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_temp" title="임시저장">△</span></td>
+                                            <td><span class="eval_sym sym_none" title="미저장">✕</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>경기-수원시-010</td>
+                                            <td>EP1</td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="eval_sym sym_temp" title="임시저장">△</span></td>
+                                            <td><span class="eval_sym sym_none" title="미저장">✕</span></td>
+                                            <td><span class="eval_sym sym_done" title="완료">○</span></td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="pagination_wrap">
+                            <button type="button" class="page_btn start" title="첫 페이지로 이동">&laquo;</button>
+                            <button type="button" class="page_btn prev" title="이전 페이지로 이동">&lsaquo;</button>
+                            <a href="javascript:void(0)" class="active">1</a>
+                            <a href="javascript:void(0)">2</a>
+                            <a href="javascript:void(0)">3</a>
+                            <button type="button" class="page_btn next" title="다음 페이지로 이동">&rsaquo;</button>
+                            <button type="button" class="page_btn end" title="마지막 페이지로 이동">&raquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
