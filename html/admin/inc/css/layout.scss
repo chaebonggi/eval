@@ -514,7 +514,7 @@ input.krds-input {
 }
 
 // ==========================================
-// 버튼 시스템
+// 버튼 시스템 (.krds-btn)
 // ==========================================
 .btn-group {
     display: flex;
@@ -524,14 +524,6 @@ input.krds-input {
     select.krds-form-select {
         height: 36px !important;
         line-height: 34px;
-        box-sizing: border-box;
-    }
-
-    .krds-btn {
-        height: 36px !important;
-        line-height: 34px;
-        padding: 0 1.4rem;
-        font-size: 1.35rem;
         box-sizing: border-box;
     }
 }
@@ -563,10 +555,7 @@ input.krds-input {
         vertical-align: middle;
     }
 
-    &.small {
-        height: 36px !important;
-    }
-
+    // 1. 검색 버튼 (짙은 먹색)
     &.search {
         background-color: #33363d;
         border-color: #33363d;
@@ -577,6 +566,7 @@ input.krds-input {
         }
     }
 
+    // 2. 신규 등록 / 삭제 버튼 (중간 그레이)
     &.type02 {
         background-color: #5c626d;
         border-color: #5c626d;
@@ -591,6 +581,7 @@ input.krds-input {
         }
     }
 
+    // 3. 기본 일반 버튼 (화이트 / 회색 테두리)
     &.nomal {
         background-color: #fff;
         border-color: var(--color-border);
@@ -604,8 +595,148 @@ input.krds-input {
             background-color: var(--color-background);
         }
     }
+
+    // 4. 엑셀 다운로드 버튼 (연한 블루 배경 강조)
+    &.excel {
+        background-color: var(--color-lightblue);
+        border: 1px solid var(--color-lightblue2);
+        color: var(--color-primary);
+        font-weight: 600;
+
+        .svg-icon {
+            background-color: var(--color-primary);
+        }
+
+        &:hover {
+            background-color: #d2e4ff;
+        }
+    }
+
+    // 5. 팝업 모달 취소 버튼 (연회색)
+    &.btn_cancel {
+        background-color: #f1f3f5;
+        border: 1px solid #e9ecef;
+        color: #495057;
+
+        &:hover {
+            background-color: #e9ecef;
+        }
+    }
+
+    // 6. 팝업 모달 확인 / 적용 버튼 (원색 블루)
+    &.btn_confirm {
+        background-color: #1a6dff;
+        border: 1px solid #1a6dff;
+        color: #fff;
+        font-weight: 600;
+
+        &:hover {
+            background-color: #0b5ce6;
+        }
+    }
+}
+// ==========================================
+// 공통 모달 팝업 및 파일 드롭존
+// ==========================================
+.krds-modal {
+    .modal-dialog {
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+
+        .modal-content {
+            border-radius: 16px;
+        }
+    }
+
+    .modal_guide_txt {
+        font-size: 1.35rem;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 16px;
+        word-break: keep-all;
+    }
 }
 
+.file_drop_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border: 2px dashed #b8c8dc;
+    border-radius: 12px;
+    background-color: #fbfdff;
+    padding: 24px 20px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background-color 0.2s;
+
+    &:hover,
+    &.drag_over {
+        border-color: #1a6dff;
+        background-color: #f4f8ff;
+    }
+
+    // 파일 선택 전 기본 안내 영역
+    .drop_default {
+        display: block;
+
+        .drop_icon {
+            font-size: 4.4rem;
+            color: #1a6dff;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+
+        .drop_tit {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        .drop_desc {
+            font-size: 1.25rem;
+            color: #868e96;
+            margin-top: 4px;
+        }
+    }
+
+    // 파일 선택 후 파일명만 노출되는 영역
+    .drop_uploaded {
+        display: none;
+        width: 100%;
+
+        .selected_file_name {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #1a6dff;
+            word-break: break-all;
+            background-color: #eef5ff;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid #d0e2ff;
+            display: inline-block;
+            max-width: 90%;
+            line-height: 1.4;
+        }
+    }
+
+    // 파일이 첨부되었을 때 상태
+    &.has_file {
+        border: 2px solid #1a6dff;
+        background-color: #fbfdff;
+
+        .drop_default {
+            display: none;
+        }
+
+        .drop_uploaded {
+            display: block;
+        }
+    }
+}
 // ==========================================
 // 테이블 그리드
 // ==========================================
