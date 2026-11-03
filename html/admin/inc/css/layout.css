@@ -679,6 +679,7 @@ input.krds-input::placeholder {
 
 .file_drop_box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 160px;
@@ -731,10 +732,6 @@ input.krds-input::placeholder {
   display: inline-block;
   max-width: 90%;
   line-height: 1.4;
-}
-.file_drop_box.has_file {
-  border: 2px solid #1a6dff;
-  background-color: #fbfdff;
 }
 .file_drop_box.has_file .drop_default {
   display: none;

@@ -660,6 +660,7 @@ input.krds-input {
 
 .file_drop_box {
     display: flex;
+    flex-direction: column; // 세로 중앙 정렬 추가
     align-items: center;
     justify-content: center;
     min-height: 160px;
@@ -725,9 +726,6 @@ input.krds-input {
 
     // 파일이 첨부되었을 때 상태
     &.has_file {
-        border: 2px solid #1a6dff;
-        background-color: #fbfdff;
-
         .drop_default {
             display: none;
         }
