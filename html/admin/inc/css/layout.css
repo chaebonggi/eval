@@ -401,7 +401,7 @@ section .snb_wrap ul li div .material-symbols-outlined {
 section .snb_wrap ul li div a.d1 {
   display: inline-block;
   font-size: 1.35rem;
-  padding: 6px 8px;
+  padding: 2px 8px;
   transition: opacity 0.2s;
 }
 section .snb_wrap ul li div a.d1:hover, section .snb_wrap ul li div a.d1.active {
