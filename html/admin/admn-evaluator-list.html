@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 평가위원 관리</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inc/css/krds.min.css" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/krds.min.js"></script>
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr03">관리자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">회원 관리</span>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list.html" class="d1">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">manage_accounts</span><a href="admn-evaluator-list.html" class="d1 active">평가위원 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">평가 관리</span>
+                    <div><span class="material-symbols-outlined">task_alt</span><a href="javascript:void(0)" class="d1">정성평가 관리</a></div>
+                    <div><span class="material-symbols-outlined">person_search</span><a href="javascript:void(0)" class="d1">대상자별 평가점수</a></div>
+                </li>
+                <li>
+                    <span class="stit">서류 관리</span>
+                    <div><span class="material-symbols-outlined">app_registration</span><a href="javascript:void(0)" class="d1">평가위원 제출서류</a></div>
+                </li>
+                <li>
+                    <span class="stit">통계</span>
+                    <div><span class="material-symbols-outlined">web</span><a href="javascript:void(0)" class="d1">전체 평가요약</a></div>
+                    <div><span class="material-symbols-outlined">travel_explore</span><a href="javascript:void(0)" class="d1">지역별 통계</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content full_width">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>회원 관리</li>
+                        <li id="breadcrumbActive">평가위원 관리</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>평가위원 관리</h2>
+                </div>
+                <div class="contents_wrap">
+                    <div class="flex jcs alc mb10">
+                        <div class="table-group">
+                            <p class="total">총 <strong>10</strong>명</p>
+                        </div>
+                        <div class="btn-group">
+                            <select class="krds-form-select small w100" id="pageUnit" title="목록 건수 선택">
+                                <option value="10">10개</option>
+                                <option value="20">20개</option>
+                                <option value="30">30개</option>
+                                <option value="50">50개</option>
+                            </select>
+                            <button type="button" class="krds-btn type02" id="btnNewRegist" onclick="location.href='admn-evaluator-detail.html?mode=new'">
+                                <i class="svg-icon ico-plus02 right"></i> 신규 등록
+                            </button>
+                            <button type="button" class="krds-btn nomal open-modal" data-target="modal-excel-eval-regist" id="btnExcelRegist">
+                                <i class="svg-icon ico-upload right"></i> 엑셀 사용자 등록
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table_wrap">
+                        <div class="table-container">
+                            <div class="krds-table-wrap tbl-type03">
+                                <table class="tbl col data min-full">
+                                    <caption>평가위원 목록 표 (번호, 평가그룹명, 평가위원, 아이디)</caption>
+                                    <colgroup>
+                                        <col style="width: 10rem;">
+                                        <col style="width: 25rem;">
+                                        <col style="width: 25rem;">
+                                        <col style="width: 25rem;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">평가그룹명</th>
+                                            <th scope="col">평가위원</th>
+                                            <th scope="col">아이디</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>EP1</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev001" class="tbl_link">지현식</a></td>
+                                            <td>ev001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>EP1</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev002" class="tbl_link">이정은</a></td>
+                                            <td>ev002</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>EP1</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev003" class="tbl_link">채봉기</a></td>
+                                            <td>ev003</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>EP1</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev004" class="tbl_link">김민수</a></td>
+                                            <td>ev004</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>EP2</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev005" class="tbl_link">박지현</a></td>
+                                            <td>ev005</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>EP2</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev006" class="tbl_link">정태영</a></td>
+                                            <td>ev006</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>EP2</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev007" class="tbl_link">한상우</a></td>
+                                            <td>ev007</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>EP2</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev008" class="tbl_link">오세진</a></td>
+                                            <td>ev008</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>EP3</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev009" class="tbl_link">강동원</a></td>
+                                            <td>ev009</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>EP3</td>
+                                            <td><a href="admn-evaluator-detail.html?id=ev010" class="tbl_link">윤서진</a></td>
+                                            <td>ev010</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="pagination_wrap">
+                            <button type="button" class="page_btn start" title="첫 페이지로 이동">&laquo;</button>
+                            <button type="button" class="page_btn prev" title="이전 페이지로 이동">&lsaquo;</button>
+                            <a href="javascript:void(0)" class="active">1</a>
+                            <a href="javascript:void(0)">2</a>
+                            <a href="javascript:void(0)">3</a>
+                            <button type="button" class="page_btn next" title="다음 페이지로 이동">&rsaquo;</button>
+                            <button type="button" class="page_btn end" title="마지막 페이지로 이동">&raquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 엑셀 사용자 일괄 등록 팝업 (공통 모달) -->
+    <section id="modal-excel-eval-regist" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal_eval_regist">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="tit_modal_eval_regist" class="modal-title">엑셀 평가위원 일괄 등록</h2>
+                </div>
+                <div class="modal-conts">
+                    <div class="conts-area">
+                        <p class="modal_guide_txt">평가위원 목록(.xlsx, .xls)을 업로드하여 일괄 등록합니다.</p>
+                        <label for="excelEvalRegistFile" class="file_drop_box">
+                            <div class="drop_default">
+                                <span class="material-symbols-outlined drop_icon">cloud_upload</span>
+                                <p class="drop_tit">엑셀 파일을 끌어다 놓거나 클릭하세요</p>
+                                <p class="drop_desc">양식: 평가그룹명, 평가위원명, 아이디, 비밀번호, 평가순번</p>
+                            </div>
+                            <div class="drop_uploaded">
+                                <p class="selected_file_name"></p>
+                            </div>
+                            <input type="file" id="excelEvalRegistFile" class="sr-only" accept=".xlsx, .xls">
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-btn btn-wrap">
+                    <button type="button" class="krds-btn medium tertiary close-modal">취소</button>
+                    <button type="button" class="krds-btn medium primary" id="btnRunExcelRegist">확인</button>
+                </div>
+                <button type="button" class="krds-btn medium icon btn-close close-modal">
+                    <span class="sr-only">닫기</span>
+                    <i class="svg-icon ico-popup-close"></i>
+                </button>
+            </div>
+        </div>
+        <div class="modal-back"></div>
+    </section>
+</body>
+</html>

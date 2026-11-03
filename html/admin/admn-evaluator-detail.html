@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 평가위원 상세</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inc/css/krds.min.css" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/krds.min.js"></script>
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr03">관리자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">회원 관리</span>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list.html" class="d1">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">manage_accounts</span><a href="admn-evaluator-list.html" class="d1 active">평가위원 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">평가 관리</span>
+                    <div><span class="material-symbols-outlined">task_alt</span><a href="javascript:void(0)" class="d1">정성평가 관리</a></div>
+                    <div><span class="material-symbols-outlined">person_search</span><a href="javascript:void(0)" class="d1">대상자별 평가점수</a></div>
+                </li>
+                <li>
+                    <span class="stit">서류 관리</span>
+                    <div><span class="material-symbols-outlined">app_registration</span><a href="javascript:void(0)" class="d1">평가위원 제출서류</a></div>
+                </li>
+                <li>
+                    <span class="stit">통계</span>
+                    <div><span class="material-symbols-outlined">web</span><a href="javascript:void(0)" class="d1">전체 평가요약</a></div>
+                    <div><span class="material-symbols-outlined">travel_explore</span><a href="javascript:void(0)" class="d1">지역별 통계</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content full_width">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>회원 관리</li>
+                        <li>평가위원 관리</li>
+                        <li id="breadcrumbActive">평가위원 상세</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2 id="pageTitle">평가위원 상세</h2>
+                </div>
+                <div class="contents_wrap info_wrap">
+                    <form id="evaluatorForm" onsubmit="return false;">
+                        <div class="flex jcs mb10">
+                            <p class="tit">기본정보</p>
+                        </div>
+                        <div class="respon-table">
+                            <!-- 1. 이름 (읽기 전용) -->
+                            <div class="table-item"><label for="evalName">이름</label></div>
+                            <div class="table-item merge-rest">
+                                <input type="text" id="evalName" name="evalName" class="krds-input w250" value="이정은" placeholder="이름" readonly>
+                            </div>
+
+                            <!-- 2. 아이디 (읽기 전용) -->
+                            <div class="table-item"><label for="evalId">아이디</label></div>
+                            <div class="table-item merge-rest">
+                                <input type="text" id="evalId" name="evalId" class="krds-input w250" value="ep0001" placeholder="아이디" readonly>
+                            </div>
+
+                            <!-- 3. 패스워드 (수정 가능) -->
+                            <div class="table-item"><label for="evalPw">패스워드</label></div>
+                            <div class="table-item merge-rest">
+                                <input type="password" id="evalPw" name="evalPw" class="krds-input w300" placeholder="비밀번호 입력">
+                            </div>
+
+                            <!-- 4. 평가그룹 (수정 가능) -->
+                            <div class="table-item"><label for="evalGroup">평가그룹</label></div>
+                            <div class="table-item merge-rest">
+                                <select class="krds-form-select w250" id="evalGroup" name="evalGroup">
+                                    <option value="">전체</option>
+                                    <option value="EP1" selected>EP1</option>
+                                    <option value="EP2">EP2</option>
+                                    <option value="EP3">EP3</option>
+                                </select>
+                            </div>
+
+                            <!-- 5. 평가순번 (수정 가능) -->
+                            <div class="table-item"><label for="evalOrder">평가순번</label></div>
+                            <div class="table-item merge-rest">
+                                <select class="krds-form-select w250" id="evalOrder" name="evalOrder">
+                                    <option value="">전체</option>
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 액션 버튼 영역 -->
+                        <div class="btn-group jcc mt30">
+                            <button type="button" class="krds-btn nomal" id="btnList" onclick="location.href='admn-evaluator-list.html'">목록</button>
+                            <button type="button" class="krds-btn search" id="btnSubmit">수정</button>
+                            <button type="button" class="krds-btn type02" id="btnDelete">삭제</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
