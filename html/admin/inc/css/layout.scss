@@ -470,19 +470,29 @@ section {
     padding: 20px 24px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
+    .flex.jcs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
     .form-group {
         margin: 0;
+    }
+
+    // search_wrap 내부의 모든 label에 기본 스타일 보장
+    label {
+        font-size: 1.4rem;
+        color: var(--color-text);
+        white-space: nowrap;
+        display: inline-block;
     }
 
     .input-group {
         display: flex;
         gap: 1.2rem;
-        
-        label {
-            font-size: 1.4rem;
-            color: var(--color-text);
-            white-space: nowrap;
-        }
     }
 }
 
@@ -555,7 +565,6 @@ input.krds-input {
         vertical-align: middle;
     }
 
-    // 1. 검색 버튼 (짙은 먹색)
     &.search {
         background-color: #33363d;
         border-color: #33363d;
@@ -566,7 +575,6 @@ input.krds-input {
         }
     }
 
-    // 2. 신규 등록 / 삭제 버튼 (중간 그레이)
     &.type02 {
         background-color: #5c626d;
         border-color: #5c626d;
@@ -581,7 +589,6 @@ input.krds-input {
         }
     }
 
-    // 3. 기본 일반 버튼 (화이트 / 회색 테두리)
     &.nomal {
         background-color: #fff;
         border-color: var(--color-border);
@@ -596,7 +603,6 @@ input.krds-input {
         }
     }
 
-    // 4. 엑셀 다운로드 버튼 (연한 블루 배경 강조)
     &.excel {
         background-color: var(--color-lightblue);
         border: 1px solid var(--color-lightblue2);
@@ -612,7 +618,6 @@ input.krds-input {
         }
     }
 
-    // 5. 팝업 모달 취소 버튼 (연회색)
     &.btn_cancel {
         background-color: #f1f3f5;
         border: 1px solid #e9ecef;
@@ -623,7 +628,6 @@ input.krds-input {
         }
     }
 
-    // 6. 팝업 모달 확인 / 적용 버튼 (원색 블루)
     &.btn_confirm {
         background-color: #1a6dff;
         border: 1px solid #1a6dff;
@@ -635,6 +639,7 @@ input.krds-input {
         }
     }
 }
+
 // ==========================================
 // 공통 모달 팝업 및 파일 드롭존
 // ==========================================
@@ -660,7 +665,7 @@ input.krds-input {
 
 .file_drop_box {
     display: flex;
-    flex-direction: column; // 세로 중앙 정렬 추가
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 160px;
@@ -679,7 +684,6 @@ input.krds-input {
         background-color: #f4f8ff;
     }
 
-    // 파일 선택 전 기본 안내 영역
     .drop_default {
         display: block;
 
@@ -704,7 +708,6 @@ input.krds-input {
         }
     }
 
-    // 파일 선택 후 파일명만 노출되는 영역
     .drop_uploaded {
         display: none;
         width: 100%;
@@ -724,7 +727,6 @@ input.krds-input {
         }
     }
 
-    // 파일이 첨부되었을 때 상태
     &.has_file {
         .drop_default {
             display: none;
@@ -735,6 +737,7 @@ input.krds-input {
         }
     }
 }
+
 // ==========================================
 // 테이블 그리드
 // ==========================================
@@ -1019,6 +1022,7 @@ input.krds-input {
         }
     }
 }
+
 // ==========================================
 // 정성평가 관리
 // ==========================================
@@ -1183,5 +1187,82 @@ input.krds-input {
 @media (max-width: 768px) {
     .eval_members_card_wrap {
         grid-template-columns: 1fr;
+    }
+}
+
+// ==========================================
+// 대상자별 평가점수
+// ==========================================
+.score_guide_wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    font-size: 1.35rem;
+    color: #495057;
+    white-space: nowrap;
+
+    .guide_tit {
+        font-weight: 700;
+        color: #212529;
+    }
+
+    .guide_desc {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .guide_items {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.txt_diff {
+    color: #e03131 !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+td .txt_diff {
+    font-size: 1.35rem;
+}
+
+.analysis_badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    .material-symbols-outlined {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    &.check {
+        color: #0ca649;
+        background-color: #f1fbf5;
+        border: 1px solid #c3edd3;
+    }
+
+    &.warn {
+        color: #d97706;
+        background-color: #fff9ed;
+        border: 1px solid #fde2b4;
+    }
+
+    &.danger {
+        color: #e03131;
+        background-color: #fff4f4;
+        border: 1px solid #fcc;
     }
 }

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 대상자별 평가점수</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inc/css/krds.min.css" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/krds.min.js"></script>
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr03">관리자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">회원 관리</span>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list.html" class="d1">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">manage_accounts</span><a href="admn-evaluator-list.html" class="d1">평가위원 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">평가 관리</span>
+                    <div><span class="material-symbols-outlined">task_alt</span><a href="admn-eval-qual-list.html" class="d1">정성평가 관리</a></div>
+                    <div><span class="material-symbols-outlined">person_search</span><a href="admn-eval-score-list.html" class="d1 active">대상자별 평가점수</a></div>
+                </li>
+                <li>
+                    <span class="stit">서류 관리</span>
+                    <div><span class="material-symbols-outlined">app_registration</span><a href="admn-doc-list.html" class="d1">평가위원 제출서류</a></div>
+                </li>
+                <li>
+                    <span class="stit">통계</span>
+                    <div><span class="material-symbols-outlined">web</span><a href="admn-stat-summary.html" class="d1">전체 평가요약</a></div>
+                    <div><span class="material-symbols-outlined">travel_explore</span><a href="admn-stat-region.html" class="d1">지역별 통계</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content full_width">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>평가 관리</li>
+                        <li id="breadcrumbActive">대상자별 평가점수</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>대상자별 평가점수</h2>
+                </div>
+                <div class="contents_wrap">
+                    <!-- 상단 검색조건 및 분석 기준 안내 -->
+                    <div class="search_wrap mb20">
+                        <div class="flex jcs alc">
+                            <!-- 좌측: 검색 조건 (한 줄 배치) -->
+                            <form id="scoreSearchForm" onsubmit="return false;">
+                                <div class="input-group alc">
+                                    <label for="filterSido" class="fw700">검색조건</label>
+                                    <select class="krds-form-select small w140" id="filterSido">
+                                        <option value="">시도선택</option>
+                                        <option value="경기" selected>경기</option>
+                                        <option value="강원">강원</option>
+                                        <option value="충북">충북</option>
+                                        <option value="충남">충남</option>
+                                        <option value="전북">전북</option>
+                                        <option value="전남">전남</option>
+                                        <option value="경북">경북</option>
+                                        <option value="경남">경남</option>
+                                        <option value="제주">제주</option>
+                                    </select>
+                                    <select class="krds-form-select small w140" id="filterSigungu">
+                                        <option value="">시군구선택</option>
+                                        <option value="수원시" selected>수원시</option>
+                                        <option value="시흥시">시흥시</option>
+                                    </select>
+                                    <button type="button" class="krds-btn search wauto" id="btnSearch">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 우측: 점수 분석 기준 안내 -->
+                            <div class="score_guide_wrap">
+                                <span class="guide_tit">점수 분석 기준:</span>
+                                <span class="guide_desc">평균 대비 ±10점 편차 시 <strong class="txt_diff">빨간색 표시</strong> &middot;</span>
+                                <div class="guide_items">
+                                    <span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인 (1개 이하)</span>
+                                    <span class="analysis_badge warn"><span class="material-symbols-outlined">warning</span>검증 필요 (2개)</span>
+                                    <span class="analysis_badge danger"><span class="material-symbols-outlined">error</span>필수 검증 (3개 이상)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 컨트롤 영역 -->
+                    <div class="flex jce alc mb10">
+                        <div class="btn-group">
+                            <select class="krds-form-select small w100" id="pageUnit" title="목록 건수 선택">
+                                <option value="10">10개</option>
+                                <option value="20">20개</option>
+                                <option value="30">30개</option>
+                                <option value="50">50개</option>
+                            </select>
+                            <button type="button" class="krds-btn excel" id="btnExcelDownload">
+                                <i class="svg-icon ico-download right"></i> 엑셀 다운로드
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 데이터 테이블 그리드 -->
+                    <div class="table_wrap">
+                        <div class="table-container">
+                            <div class="krds-table-wrap tbl-type03">
+                                <table class="tbl col data min-full">
+                                    <caption>대상자별 평가점수 목록 표 (번호, 식별번호, 평가그룹, 평가위원A, 평가위원B, 평가위원C, 평가위원D, 총점, 평균, 분석)</caption>
+                                    <colgroup>
+                                        <col style="width: 7rem;">
+                                        <col style="width: 18rem;">
+                                        <col style="width: 12rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 11rem;">
+                                        <col style="width: 14rem;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">식별번호</th>
+                                            <th scope="col">평가그룹</th>
+                                            <th scope="col">평가위원A</th>
+                                            <th scope="col">평가위원B</th>
+                                            <th scope="col">평가위원C</th>
+                                            <th scope="col">평가위원D</th>
+                                            <th scope="col">총점</th>
+                                            <th scope="col">평균</th>
+                                            <th scope="col">분석</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>경기-수원시-001</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>경기-수원시-002</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>경기-수원시-003</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>경기-수원시-004</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>경기-수원시-005</td>
+                                            <td>EP1</td>
+                                            <td>47.5</td>
+                                            <td><span class="txt_diff">37</span></td>
+                                            <td><span class="txt_diff">70</span></td>
+                                            <td><span class="txt_diff">65</span></td>
+                                            <td>255</td>
+                                            <td>54.75</td>
+                                            <td><span class="analysis_badge danger"><span class="material-symbols-outlined">error</span>필수 검증</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>경기-수원시-006</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>경기-수원시-007</td>
+                                            <td>EP1</td>
+                                            <td><span class="txt_diff">60.5</span></td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>경기-수원시-008</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td>65</td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>경기-수원시-009</td>
+                                            <td>EP1</td>
+                                            <td>60.5</td>
+                                            <td><span class="txt_diff">52</span></td>
+                                            <td>62.5</td>
+                                            <td><span class="txt_diff">52</span></td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge warn"><span class="material-symbols-outlined">warning</span>검증 필요</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>경기-수원시-010</td>
+                                            <td>EP1</td>
+                                            <td>65</td>
+                                            <td>67</td>
+                                            <td>62.5</td>
+                                            <td><span class="txt_diff">52</span></td>
+                                            <td>255</td>
+                                            <td>63.75</td>
+                                            <td><span class="analysis_badge check"><span class="material-symbols-outlined">check_circle</span>확인</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="pagination_wrap">
+                            <button type="button" class="page_btn start" title="첫 페이지로 이동">&laquo;</button>
+                            <button type="button" class="page_btn prev" title="이전 페이지로 이동">&lsaquo;</button>
+                            <a href="javascript:void(0)" class="active">1</a>
+                            <a href="javascript:void(0)">2</a>
+                            <a href="javascript:void(0)">3</a>
+                            <button type="button" class="page_btn next" title="다음 페이지로 이동">&rsaquo;</button>
+                            <button type="button" class="page_btn end" title="마지막 페이지로 이동">&raquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
