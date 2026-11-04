@@ -2184,3 +2184,309 @@ section .container .ap_content.dashboard_page {
   justify-content: center !important;
   gap: 10px;
 }
+
+.login_page_wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  padding: 40px 20px;
+}
+.login_page_wrap .login_top_logo {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.login_page_wrap .login_top_logo img {
+  height: 42px;
+  margin-bottom: 8px;
+}
+.login_page_wrap .login_top_logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+.login_page_wrap .login_card {
+  width: 100%;
+  max-width: 620px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.login_page_wrap .login_card .card_top_bar {
+  background-color: #0b325b;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_top_bar .title_area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.login_page_wrap .login_card .card_top_bar .title_area span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_top_bar .title_area .material-symbols-outlined {
+  color: #38bdf8;
+}
+.login_page_wrap .login_card .card_top_bar .ssl_badge {
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #bae6fd;
+}
+.login_page_wrap .login_card .card_body {
+  padding: 32px;
+}
+.login_page_wrap .login_card .card_body .sec_title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+.login_page_wrap .login_card .card_body .role_select_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.login_page_wrap .login_card .card_body .role_select_grid input[type=radio] {
+  display: none;
+}
+.login_page_wrap .login_card .card_body .role_select_grid label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.login_page_wrap .login_card .card_body .role_select_grid label .icon_circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--color-gray2);
+  transition: all 0.2s;
+}
+.login_page_wrap .login_card .card_body .role_select_grid label .icon_circle .material-symbols-outlined {
+  font-size: 2.2rem;
+}
+.login_page_wrap .login_card .card_body .role_select_grid label .role_name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.login_page_wrap .login_card .card_body .role_select_grid label .role_desc {
+  font-size: 1.4rem;
+  color: var(--color-gray2);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_eval:checked + label {
+  border-color: var(--color-success);
+  background-color: #f6ffed;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_eval:checked + label .icon_circle {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_eval:checked + label .role_name {
+  color: var(--color-success);
+  font-weight: 700;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_user:checked + label {
+  border-color: var(--color-primary);
+  background-color: var(--color-lightblue);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_user:checked + label .icon_circle {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_user:checked + label .role_name {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_admin:checked + label {
+  border-color: var(--color-badge);
+  background-color: #f0edff;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_admin:checked + label .icon_circle {
+  background-color: var(--color-badge);
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_admin:checked + label .role_name {
+  color: var(--color-badge);
+  font-weight: 700;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_local:checked + label {
+  border-color: var(--color-warning);
+  background-color: #fff7e6;
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_local:checked + label .icon_circle {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .role_select_grid #role_local:checked + label .role_name {
+  color: var(--color-warning);
+  font-weight: 700;
+}
+.login_page_wrap .login_card .card_body .role_guide_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+.login_page_wrap .login_card .card_body .role_guide_box .material-symbols-outlined {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+.login_page_wrap .login_card .card_body .role_guide_box strong, .login_page_wrap .login_card .card_body .role_guide_box span {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.login_page_wrap .login_card .card_body .role_guide_box strong {
+  font-weight: 700;
+}
+.login_page_wrap .login_card .card_body .role_guide_box.theme_eval {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #237804;
+}
+.login_page_wrap .login_card .card_body .role_guide_box.theme_user {
+  background-color: var(--color-lightblue);
+  border: 1px solid var(--color-lightblue2);
+  color: var(--color-primary);
+}
+.login_page_wrap .login_card .card_body .role_guide_box.theme_admin {
+  background-color: #f0edff;
+  border: 1px solid #d3adf7;
+  color: #531dab;
+}
+.login_page_wrap .login_card .card_body .role_guide_box.theme_local {
+  background-color: #fff7e6;
+  border: 1px solid #ffd591;
+  color: #d46b08;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row .input_with_icon {
+  position: relative;
+  width: 100%;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row .input_with_icon input {
+  width: 100%;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 1.3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  height: 46px;
+  font-size: 1.4rem;
+  padding: 0 14px;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row .input_with_icon .btn_toggle_pw {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .input_row .input_with_icon .btn_toggle_pw .material-symbols-outlined {
+  font-size: 2.2rem;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--color-white);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_eval {
+  background-color: var(--color-success);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_eval:hover {
+  opacity: 0.9;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_user {
+  background-color: var(--color-primary);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_user:hover {
+  opacity: 0.9;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_admin {
+  background-color: var(--color-badge);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_admin:hover {
+  opacity: 0.9;
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_local {
+  background-color: var(--color-warning);
+}
+.login_page_wrap .login_card .card_body .form_field_wrap .btn_login_submit.theme_local:hover {
+  opacity: 0.9;
+}
+.login_page_wrap .login_bottom_info {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--color-gray2);
+}
+.login_page_wrap .login_bottom_info .notice_text {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+.login_page_wrap .login_bottom_info .contact_text, .login_page_wrap .login_bottom_info .copyright_text {
+  font-size: 1.4rem;
+  color: var(--color-gray);
+  margin-bottom: 6px;
+}

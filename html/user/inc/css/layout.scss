@@ -2385,3 +2385,285 @@ section .container .ap_content.dashboard_page {
         }
     }
 }
+// ==========================================
+// 로그인 페이지 (.login_page_wrap)
+// ==========================================
+.login_page_wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    padding: 40px 20px;
+
+    .login_top_logo {
+        margin-bottom: 24px;
+        text-align: center;
+
+        img {
+            height: 42px;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: -0.5px;
+        }
+    }
+
+    .login_card {
+        width: 100%;
+        max-width: 620px;
+        background-color: var(--color-white);
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+
+        .card_top_bar {
+            background-color: #0b325b;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-white);
+
+            .title_area {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                span {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: var(--color-white);
+                }
+
+                .material-symbols-outlined {
+                    color: #38bdf8;
+                }
+            }
+
+            .ssl_badge {
+                font-size: 1.4rem;
+                background-color: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                padding: 4px 10px;
+                border-radius: 4px;
+                color: #bae6fd;
+            }
+        }
+
+        .card_body {
+            padding: 32px;
+
+            .sec_title {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--color-text);
+                margin-bottom: 14px;
+            }
+
+            .role_select_grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                margin-bottom: 20px;
+
+                input[type="radio"] {
+                    display: none;
+                }
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 16px 6px;
+                    border: 1px solid var(--color-border);
+                    border-radius: 8px;
+                    background-color: var(--color-white);
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    text-align: center;
+
+                    .icon_circle {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background-color: var(--color-background);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 8px;
+                        color: var(--color-gray2);
+                        transition: all 0.2s;
+
+                        .material-symbols-outlined {
+                            font-size: 2.2rem;
+                        }
+                    }
+
+                    .role_name {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        color: var(--color-text);
+                        margin-bottom: 4px;
+                    }
+
+                    .role_desc {
+                        font-size: 1.4rem;
+                        color: var(--color-gray2);
+                    }
+                }
+
+                #role_eval:checked + label {
+                    border-color: var(--color-success);
+                    background-color: #f6ffed;
+                    .icon_circle { background-color: var(--color-success); color: var(--color-white); }
+                    .role_name { color: var(--color-success); font-weight: 700; }
+                }
+
+                #role_user:checked + label {
+                    border-color: var(--color-primary);
+                    background-color: var(--color-lightblue);
+                    .icon_circle { background-color: var(--color-primary); color: var(--color-white); }
+                    .role_name { color: var(--color-primary); font-weight: 700; }
+                }
+
+                #role_admin:checked + label {
+                    border-color: var(--color-badge);
+                    background-color: #f0edff;
+                    .icon_circle { background-color: var(--color-badge); color: var(--color-white); }
+                    .role_name { color: var(--color-badge); font-weight: 700; }
+                }
+
+                #role_local:checked + label {
+                    border-color: var(--color-warning);
+                    background-color: #fff7e6;
+                    .icon_circle { background-color: var(--color-warning); color: var(--color-white); }
+                    .role_name { color: var(--color-warning); font-weight: 700; }
+                }
+            }
+
+            .role_guide_box {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-radius: 6px;
+                padding: 14px 18px;
+                margin-bottom: 24px;
+
+                .material-symbols-outlined {
+                    font-size: 2.2rem;
+                    flex-shrink: 0;
+                }
+
+                strong, span {
+                    font-size: 1.4rem;
+                    line-height: 1.5;
+                }
+
+                strong { font-weight: 700; }
+
+                &.theme_eval { background-color: #f6ffed; border: 1px solid #b7eb8f; color: #237804; }
+                &.theme_user { background-color: var(--color-lightblue); border: 1px solid var(--color-lightblue2); color: var(--color-primary); }
+                &.theme_admin { background-color: #f0edff; border: 1px solid #d3adf7; color: #531dab; }
+                &.theme_local { background-color: #fff7e6; border: 1px solid #ffd591; color: #d46b08; }
+            }
+
+            .form_field_wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                .input_row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    label {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: var(--color-text);
+                    }
+
+                    .input_with_icon {
+                        position: relative;
+                        width: 100%;
+
+                        input {
+                            @include input;
+                            height: 46px;
+                            font-size: 1.4rem;
+                            padding: 0 14px;
+                        }
+
+                        .btn_toggle_pw {
+                            position: absolute;
+                            right: 12px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            color: var(--color-gray);
+
+                            .material-symbols-outlined {
+                                font-size: 2.2rem;
+                            }
+                        }
+                    }
+                }
+
+                .btn_login_submit {
+                    margin-top: 10px;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 6px;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+
+                    span {
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        color: var(--color-white);
+                    }
+
+                    .material-symbols-outlined {
+                        font-size: 2.0rem;
+                        color: var(--color-white);
+                    }
+
+                    &.theme_eval { background-color: var(--color-success); &:hover { opacity: 0.9; } }
+                    &.theme_user { background-color: var(--color-primary); &:hover { opacity: 0.9; } }
+                    &.theme_admin { background-color: var(--color-badge); &:hover { opacity: 0.9; } }
+                    &.theme_local { background-color: var(--color-warning); &:hover { opacity: 0.9; } }
+                }
+            }
+        }
+    }
+
+    .login_bottom_info {
+        margin-top: 24px;
+        text-align: center;
+        color: var(--color-gray2);
+
+        .notice_text {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .contact_text, .copyright_text {
+            font-size: 1.4rem;
+            color: var(--color-gray);
+            margin-bottom: 6px;
+        }
+    }
+}
