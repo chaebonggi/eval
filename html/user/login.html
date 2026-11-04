@@ -14,46 +14,42 @@
 </head>
 <body>
     <div class="login_page_wrap">
-        <!-- 상단 중앙 로고 및 타이틀 -->
         <div class="login_top_logo">
             <a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a>
             <h1>청년농업인 영농정착지원사업 평가시스템</h1>
         </div>
 
-        <!-- 중앙 로그인 카드 -->
         <div class="login_card">
-            <!-- 상단 헤더 바 -->
             <div class="card_top_bar">
                 <div class="title_area">
                     <span class="material-symbols-outlined">key</span>
                     <span>통합 로그인 및 사용자 인증</span>
                 </div>
                 <div class="ssl_badge">
-                    평가시스템
+                    안전한 공공전산망 SSL 256bit
                 </div>
             </div>
 
             <div class="card_body">
                 <div class="sec_title">로그인 대상 구분을 선택해 주세요</div>
 
-                <!-- 4개 대상 선택 탭 -->
                 <div class="role_select_grid">
-                    <input type="radio" id="role_eval" name="userRole" value="eval" checked />
-                    <label for="role_eval">
-                        <div class="icon_circle">
-                            <span class="material-symbols-outlined">person_check</span>
-                        </div>
-                        <div class="role_name">평가위원</div>
-                        <div class="role_desc">전문 심사위원</div>
-                    </label>
-
-                    <input type="radio" id="role_user" name="userRole" value="user" />
+                    <input type="radio" id="role_user" name="userRole" value="user" checked />
                     <label for="role_user">
                         <div class="icon_circle">
                             <span class="material-symbols-outlined">psychiatry</span>
                         </div>
                         <div class="role_name">신청자</div>
                         <div class="role_desc">청년농업인 지원자</div>
+                    </label>
+
+                    <input type="radio" id="role_eval" name="userRole" value="eval" />
+                    <label for="role_eval">
+                        <div class="icon_circle">
+                            <span class="material-symbols-outlined">person_check</span>
+                        </div>
+                        <div class="role_name">평가위원</div>
+                        <div class="role_desc">전문 심사위원</div>
                     </label>
 
                     <input type="radio" id="role_admin" name="userRole" value="admin" />
@@ -75,17 +71,15 @@
                     </label>
                 </div>
 
-                <!-- 권한별 안내 박스 (기본: 평가위원) -->
-                <div class="role_guide_box theme_eval" id="roleGuideBox">
+                <div class="role_guide_box theme_user" id="roleGuideBox">
                     <span class="material-symbols-outlined">how_to_reg</span>
-                    <span id="roleGuideText"><strong>평가위원 인증:</strong> 배정받으신 평가위원 ID와 비밀번호를 입력해 주십시오. 서면평가 심사 권한이 부여됩니다.</span>
+                    <span id="roleGuideText"><strong>신청자 인증:</strong> 지원 신청 시 등록한 아이디와 비밀번호를 입력해 주십시오. 영농계획서 작성 및 조회가 가능합니다.</span>
                 </div>
 
-                <!-- 로그인 입력 폼 -->
                 <form id="loginForm" onsubmit="handleLoginSubmit(event)">
                     <div class="form_field_wrap">
                         <div class="input_row">
-                            <label for="userId" id="userIdLabel">평가위원 아이디</label>
+                            <label for="userId" id="userIdLabel">신청자 아이디</label>
                             <div class="input_with_icon">
                                 <input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요." required />
                             </div>
@@ -101,8 +95,8 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn_login_submit theme_eval" id="btnSubmit">
-                            <span id="btnSubmitText">평가위원 로그인</span>
+                        <button type="submit" class="btn_login_submit theme_user" id="btnSubmit">
+                            <span id="btnSubmitText">신청자 로그인</span>
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
@@ -110,7 +104,6 @@
             </div>
         </div>
 
-        <!-- 하단 보안 안내 및 문의처 -->
         <div class="login_bottom_info">
             <div class="notice_text">※ 본 시스템은 개인정보보호법 및 공공보안업무규정에 의해 인가된 사용자만 접근할 수 있습니다.</div>
             <div class="contact_text">평가문의: 02-782-7823 &nbsp;|&nbsp; 시스템 기술지원: 010-2808-2236</div>
@@ -139,22 +132,21 @@
             var submitBtn = $('#btnSubmit');
             var submitText = $('#btnSubmitText');
 
-            // 테마 클래스 초기화
             guideBox.removeClass('theme_eval theme_user theme_admin theme_local');
             submitBtn.removeClass('theme_eval theme_user theme_admin theme_local');
 
-            if (role === 'eval') {
-                guideBox.addClass('theme_eval');
-                submitBtn.addClass('theme_eval');
-                guideText.html('<strong>평가위원 인증:</strong> 배정받으신 평가위원 ID와 비밀번호를 입력해 주십시오. 서면평가 심사 권한이 부여됩니다.');
-                idLabel.text('평가위원 아이디');
-                submitText.text('평가위원 로그인');
-            } else if (role === 'user') {
+            if (role === 'user') {
                 guideBox.addClass('theme_user');
                 submitBtn.addClass('theme_user');
                 guideText.html('<strong>신청자 인증:</strong> 지원 신청 시 등록한 아이디와 비밀번호를 입력해 주십시오. 영농계획서 작성 및 조회가 가능합니다.');
                 idLabel.text('신청자 아이디');
                 submitText.text('신청자 로그인');
+            } else if (role === 'eval') {
+                guideBox.addClass('theme_eval');
+                submitBtn.addClass('theme_eval');
+                guideText.html('<strong>평가위원 인증:</strong> 배정받으신 평가위원 ID와 비밀번호를 입력해 주십시오. 서면평가 심사 권한이 부여됩니다.');
+                idLabel.text('평가위원 아이디');
+                submitText.text('평가위원 로그인');
             } else if (role === 'admin') {
                 guideBox.addClass('theme_admin');
                 submitBtn.addClass('theme_admin');
@@ -174,10 +166,10 @@
             e.preventDefault();
             var role = $('input[name="userRole"]:checked').val();
 
-            if (role === 'eval') {
-                location.href = 'exam-dashboard.html';
-            } else if (role === 'user') {
+            if (role === 'user') {
                 location.href = 'user-dashboard.html';
+            } else if (role === 'eval') {
+                location.href = 'exam-dashboard.html';
             } else {
                 alert('로그인되었습니다. (관리자/담당자 페이지 연결 예정)');
             }
