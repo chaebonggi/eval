@@ -35,6 +35,10 @@ p, span {
   padding: 0;
 }
 
+strong, b {
+  font-size: inherit;
+}
+
 .tooltip {
   font-size: 1.6rem !important;
   cursor: help;
@@ -676,6 +680,7 @@ section .container .ap_content .contents_wrap .response_table .guide span {
 }
 section .container .ap_content .contents_wrap .response_table .guide .info {
   font-size: 1.3rem;
+  line-height: 1.4;
   top: 0;
   color: var(--color-danger);
 }
@@ -702,6 +707,7 @@ section .container .ap_content .contents_wrap .response_table .radio_group label
 section .container .ap_content .contents_wrap .response_table .info {
   display: inline-block;
   font-size: 1.3rem;
+  line-height: 1.4;
   color: var(--color-warning);
   margin-top: 6px;
 }

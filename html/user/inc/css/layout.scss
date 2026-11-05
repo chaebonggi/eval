@@ -4,6 +4,7 @@ a{text-decoration:none;color:inherit;}
 img{max-width:100%;vertical-align:middle;}
 h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 p,span{margin:0;padding:0;}
+strong, b { font-size: inherit; }
 
 // body.resizer{
 //     cursor: col-resize;
@@ -749,6 +750,7 @@ section{
 
                         .info{
                             font-size: 1.3rem;
+                            line-height: 1.4;
                             top:0;
                             color:var(--color-danger);
                         }
@@ -781,6 +783,7 @@ section{
                     .info{
                         display:inline-block;
                         font-size: 1.3rem;
+                        line-height: 1.4;
                         color:var(--color-warning);
                         margin-top:6px;
                     }
