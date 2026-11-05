@@ -18,6 +18,9 @@
   --color-guide-text: #166534;
   --color-guide-border: #bbf7d0;
   --color-badge: #363199;
+  --color-auto-back: #f9f0ff;
+  --color-auto-text: #531dab;
+  --color-auto-border: #d3adf7;
   --width-snb: 240px;
   --width-paper: 794px;
 }

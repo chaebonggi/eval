@@ -649,6 +649,17 @@ section .container .ap_content .contents_wrap .response_table .guide.type_notice
 section .container .ap_content .contents_wrap .response_table .guide.type_notice span {
   color: var(--color-primary);
 }
+section .container .ap_content .contents_wrap .response_table .guide.type_auto {
+  border-color: var(--color-auto-border);
+  background-color: var(--color-auto-back);
+  color: var(--color-auto-text);
+}
+section .container .ap_content .contents_wrap .response_table .guide.type_auto span {
+  color: var(--color-auto-text);
+}
+section .container .ap_content .contents_wrap .response_table .guide.type_auto strong {
+  color: var(--color-auto-text);
+}
 section .container .ap_content .contents_wrap .response_table .guide strong {
   font-size: 1.2rem;
 }
