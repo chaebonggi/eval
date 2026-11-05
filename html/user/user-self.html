@@ -162,14 +162,16 @@
                                 <table>
                                     <caption>필수 기재 항목 점검표 (항목, 기재 상태, 작성 위치)</caption>
                                     <colgroup>
-                                        <col width="220">
-                                        <col width="140">
                                         <col>
+                                        <col width="120">
+                                        <col width="300">
+                                        <col width="120">                                        
                                     </colgroup>
                                     <thead>
                                         <tr>
                                             <th>항목</th>
                                             <th>기재 상태</th>
+                                            <th>안내</th>
                                             <th>작성 위치</th>
                                         </tr>
                                     </thead>
@@ -177,7 +179,7 @@
                                         <!-- [Case 1] 필수 4항목 모두 작성 완료 시 -->
                                         <tr>
                                             <td class="tacenter"><strong>종합 판정</strong></td>
-                                            <td colspan="2" class="result_success_text">
+                                            <td colspan="3" class="result_success_text">
                                                 <span class="label_status comp gap_right_sm">정상</span> 필수 4항목 모두 기재 완료 - 정상 평가 대상
                                             </td>
                                         </tr>
@@ -185,7 +187,7 @@
                                         <!-- [Case 2] 미기재 항목이 존재할 때 (개발자 연동 참고용) -->
                                         <tr>
                                             <td class="tacenter"><strong>종합 판정</strong></td>
-                                            <td colspan="2" class="result_danger_text">
+                                            <td colspan="3" class="result_danger_text">
                                                 <span class="label_status warn gap_right_sm">확인 필요</span> 미기재 1건(5년차 영농 규모) - 보완 전 제출 시 부적격(서면평가 제외) 처리
                                             </td>
                                         </tr>
@@ -194,6 +196,7 @@
                                         <tr>
                                             <td class="tacenter">영농형태</td>
                                             <td class="tacenter"><span class="label_status comp">기재</span></td>
+                                            <td>경종&middot;원예&middot;축산&middot;복합영농 중 선택</td>
                                             <td class="tacenter">
                                                 <a href="user-step01.html#step0104" class="btn_move_link">[작성 위치 이동]</a>
                                             </td>
@@ -201,6 +204,7 @@
                                         <tr>
                                             <td class="tacenter">세부 품목&middot;축종</td>
                                             <td class="tacenter"><span class="label_status comp">기재</span></td>
+                                            <td>주력 품목 또는 축종을 구체적으로 기재</td>
                                             <td class="tacenter">
                                                 <a href="user-step01.html#step0104" class="btn_move_link">[작성 위치 이동]</a>
                                             </td>
@@ -208,6 +212,7 @@
                                         <tr>
                                             <td class="tacenter">영농기반 소재지</td>
                                             <td class="tacenter"><span class="label_status comp">기재</span></td>
+                                            <td>읍&middot;면&middot;동 단위까지 구체적으로 기재</td>
                                             <td class="tacenter">
                                                 <a href="user-step02.html#step0202" class="btn_move_link">[작성 위치 이동]</a>
                                             </td>
@@ -216,6 +221,7 @@
                                         <tr>
                                             <td class="tacenter">5년차 영농 규모</td>
                                             <td class="tacenter"><span class="label_status warn">미기재</span></td>
+                                            <td>재배면적(평) 또는 사육규모(두&middot;수) 중 해당 규모</td>
                                             <td class="tacenter">
                                                 <a href="user-step06.html#step0601" class="btn_move_link">[작성 위치 이동]</a>
                                             </td>
@@ -536,7 +542,7 @@
                     </div>
 
                     <!-- 05 서면평가 핵심 입력 집계 -->
-                    <h3 id="self05" class="gap_top"><span>05</span>서면평가 핵심 입력 집계 <span class="desc">(평가위원 검토 핵심 데이터)</span></h3>
+                    <h3 id="self05" class="gap_top"><span>05</span>서면평가 핵심 입력 집계</h3>
                     <div class="response_table">
                         <div class="colspan4">
                             <div class="tbl_wrap">
@@ -662,8 +668,7 @@
                         <!-- 하단 최종 안내 -->
                         <div class="colspan4 gap_minus">
                             <div class="guide type_notice guide_detail_desc">
-                                <span class="material-symbols-outlined">info</span> <strong>[최종 제출 안내]</strong> 위 점검 결과를 모두 확인하신 후 최종 영농계획서를 확인·제출하시기 바랍니다.<br/>
-                                ※ 면접 검증이 필요한 항목이 있는 경우, 심사위원 다수결로 확정되기 전의 점수는 잠정 점수이며 최종 선발·순위 산정에 즉시 사용되지 않습니다.
+                                <span class="material-symbols-outlined">info</span> <strong>[최종 제출 안내]</strong> 위 점검 결과를 모두 확인하신 후 최종 영농계획서를 확인·제출하시기 바랍니다.
                             </div>
                         </div>
                     </div>

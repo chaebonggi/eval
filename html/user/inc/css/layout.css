@@ -819,14 +819,14 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tf
   border-top: 1px solid var(--color-border);
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 12px 8px;
   font-weight: 500;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td input {
   width: calc(100% + 16px);
   height: 100%;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   border: none;
   border-radius: 0;
@@ -842,7 +842,7 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tf
   font-weight: 600;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td span {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td:first-child {
   text-align: center;
@@ -861,12 +861,12 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
   border-top: 1px solid var(--color-border);
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr th {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 10px 8px;
   background-color: var(--color-lightblue);
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 10px 8px;
   height: 1px;
 }
@@ -878,7 +878,7 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
   font-weight: 600;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td span, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td a {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td:first-child {
   text-align: center;
