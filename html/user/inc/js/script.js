@@ -238,4 +238,27 @@ $(function () {
       console.warn(`[data-score="${targetKey}"] 요소를 찾을 수 없습니다.`);
     }
   });
+
+  // 글로벌 툴팁 이벤트
+    $(document).on('mouseenter', '[data-tooltips]', function() {
+        var tipText = $(this).attr('data-tooltips');
+        if (!tipText) return;
+
+        if ($('#globalTooltip').length === 0) {
+            $('body').append('<div id="globalTooltip"></div>');
+        }
+
+        var rect = this.getBoundingClientRect();
+
+        // 텍스트 줄바꿈 유지 및 뷰포트 좌표 기준 fixed 배치
+        $('#globalTooltip')
+            .text(tipText)
+            .css({
+                top: rect.top + 'px',
+                left: (rect.left + (rect.width / 2)) + 'px',
+                display: 'block'
+            });
+    }).on('mouseleave', '[data-tooltips]', function() {
+        $('#globalTooltip').hide();
+    });
 });

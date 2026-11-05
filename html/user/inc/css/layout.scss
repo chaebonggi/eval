@@ -58,51 +58,50 @@ p,span{margin:0;padding:0;}
     cursor: pointer;
 }
 
-@mixin tooltip{
+// ==========================================
+// 툴팁 공통 믹스인 및 글로벌 스타일
+// ==========================================
+@mixin tooltip {
     font-size: 1.6rem;
     cursor: help;
+    display: inline-block;
+    vertical-align: middle;
+}
 
-    &[data-tooltips]{
-        &:hover{
-            position:relative;
+.tooltip {
+    @include tooltip();
+    position: relative;
+    top: -1px;
+    margin-left: 3px;
+}
 
-            &::before{
-                all:initial;
-                display:inline-block;
-                padding:6px 12px;
-                background-color: var(--color-guide-text);
-                content:attr(data-tooltips);
-                white-space: pre-wrap;
-                line-height: 1.4;
-                color: var(--color-white);
-                border-radius:4px;
-                position:absolute;
-                bottom:16px;
-                width:max-content;
-                //max-width: 350px;
-                left:50%;
-                transform:translate(-50%,0);
-                margin-bottom:14px;
-                text-align:center;
-                font-size:1.2rem;
-            }
+#globalTooltip {
+    position: fixed;
+    display: none;
+    padding: 6px 12px;
+    background-color: var(--color-guide-text);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    border-radius: 4px;
+    z-index: 99999;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    transform: translate(-50%, -100%);
+    margin-top: -8px;
+    white-space: pre-line;
+    word-break: keep-all;
 
-            &::after{
-                all:initial;
-                display:inline-block;
-                width:0;
-                height:0;
-                border-left:8px solid transparent;
-                border-right:8px solid transparent;
-                border-top:8px solid var(--color-guide-text);
-                position:absolute;
-                bottom:16px;
-                content:"";
-                left:50%;
-                transform:translate(-50%,0);
-                margin-bottom:6px;
-            }
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--color-guide-text);
     }
 }
 
@@ -559,11 +558,6 @@ section{
                     margin:0 0 20px;
                     font-size: 1.2rem;
                 }
-
-                .tooltip{
-                    @include tooltip();
-                }
-
                 
             }
 
@@ -823,14 +817,14 @@ section{
                             border-radius: 8px 8px 0 0;
                             background-color: var(--color-background);
 
-                            .word_cnt{
+                            .word_cnt {
                                 position: absolute;
                                 top: 50%;
-                                right:12px;
+                                right: 12px;
                                 font-size: 1.1rem;
-                                transform:translate(0, -50%);
+                                transform: translate(0, -50%);
 
-                                span{
+                                span {
                                     font-size: 1.1rem;
                                 }
                             }
@@ -853,6 +847,7 @@ section{
                             width: 100%;
                             border-collapse: collapse;
                             border-spacing: 0;
+                            table-layout: fixed;
 
                             caption{
                                 display: none;
@@ -867,12 +862,6 @@ section{
 
                                     &+th{
                                         border-left: 1px solid var(--color-border);
-                                    }
-
-                                    .tooltip{
-                                        @include tooltip();
-                                        position: relative;
-                                        top: 4px;
                                     }
                                 }
                             }
@@ -953,7 +942,7 @@ section{
                                         font-size: 1.2rem;
                                         padding:10px 8px;
                                         height: 1px;
-
+                                        
                                         &.bg_load,
                                         &.bg_load input{
                                             background-color: rgba(82, 196, 26, 0.08); // 은은한 연두색 배경
