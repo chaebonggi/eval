@@ -62,7 +62,7 @@ p,span{margin:0;padding:0;}
 // 툴팁 공통 믹스인 및 글로벌 스타일
 // ==========================================
 @mixin tooltip {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     cursor: help;
     display: inline-block;
     vertical-align: middle;
