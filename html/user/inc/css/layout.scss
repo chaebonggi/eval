@@ -43,7 +43,7 @@ p,span{margin:0;padding:0;}
     resize: none;
     box-sizing: border-box;
     padding:12px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.4;
     overflow-y: hidden;
 }
@@ -81,7 +81,7 @@ p,span{margin:0;padding:0;}
     padding: 6px 12px;
     background-color: var(--color-guide-text);
     color: var(--color-white);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.4;
     border-radius: 4px;
     z-index: 99999;
@@ -149,7 +149,7 @@ header{
 
         .year{
             @include badge(var(--color-background), var(--color-text));
-            font-size:1.2rem;
+            font-size: 1.3rem;
             font-weight:600;
             border-radius:4px;
             height:auto;
@@ -338,7 +338,7 @@ section{
                             justify-content: center;
                             height: 32px;
                             width: 33.33%;
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                             font-weight: 500;
                             border-radius: 4px;
                             cursor: pointer;
@@ -406,7 +406,7 @@ section{
                                     }
 
                                     &.state{
-                                        font-size: 1.2rem;
+                                        font-size: 1.3rem;
                                         padding:4px 6px;
                                         border-radius: 4px;
                                         background-color: var(--color-danger-back);
@@ -435,7 +435,7 @@ section{
                     li{
                         a{
                             display:block;
-                            font-size:1.2rem;
+                            font-size: 1.3rem;
                             padding:4px 8px;
 
                             &::before{
@@ -556,7 +556,7 @@ section{
 
                 div{
                     margin:0 0 20px;
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                 }
                 
             }
@@ -600,7 +600,7 @@ section{
 
                         &.desc{
                             padding:0 0 0 4px;
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                             font-weight: 400;
                             line-height: normal;
                             color: var(--color-text);
@@ -681,7 +681,7 @@ section{
                         }
 
                         .date{
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                             text-align: center;
                             margin: 32px 0;
                         }
@@ -700,13 +700,20 @@ section{
                     }
 
                     .guide{
-                        font-size: 1.2rem;
+                        font-size: 1.3rem;
                         border:1px solid var(--color-guide-border);
                         border-radius: 4px;
                         color: var(--color-guide-text);
                         background-color: var(--color-guide-back);
                         padding: 8px 12px;
                         line-height: 1.4;
+
+                        span {
+                            font-size: 1.4rem;
+                            position: relative;
+                            top: 2px;
+                            margin: 0 !important;
+                        }
 
                         &.type_notice {
                             border-color: var(--color-lightblue2);
@@ -731,7 +738,7 @@ section{
                             }
                         }
                         strong{
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                         }
 
                         span{
@@ -741,7 +748,7 @@ section{
                         }
 
                         .info{
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                             top:0;
                             color:var(--color-danger);
                         }
@@ -749,7 +756,7 @@ section{
 
                     label{
                         display:block;
-                        font-size:1.2rem;
+                        font-size:1.3rem;
                         font-weight:500;
                         margin-bottom:4px;
 
@@ -773,7 +780,7 @@ section{
 
                     .info{
                         display:inline-block;
-                        font-size:1.2rem;
+                        font-size: 1.3rem;
                         color:var(--color-warning);
                         margin-top:6px;
                     }
@@ -870,7 +877,7 @@ section{
                                 background-color: var(--color-lightblue);
 
                                 th{
-                                    font-size: 1.2rem;
+                                    font-size: 1.3rem;
                                     padding:12px 0;
 
                                     &+th{
@@ -995,7 +1002,7 @@ section{
                                         input, select{
                                             width: calc(100% + 16px);
                                             height: calc(100% + 20px);
-                                            font-size: 1.2rem;
+                                            font-size: 1.3rem;
                                             line-height: 2rem;
                                             border: none;
                                             border-radius: 0;
@@ -1218,7 +1225,7 @@ section{
                                         text-align: center;
                                         width: 32%;
                                         padding: 8px 0 0;
-                                        font-size: 1.2rem;
+                                        font-size: 1.3rem;
 
                                         strong{
                                             font-size: 2rem;
@@ -1289,7 +1296,7 @@ section{
                                             border: 1px solid var(--color-border);
                                             border-radius: 8px;
                                             color: var(--color-gray2);
-                                            font-size:1.2rem;
+                                            font-size: 1.3rem;
                                             padding: 8px;
                                             line-height: 1.4;
                                             margin-bottom: 12px;
@@ -1372,7 +1379,7 @@ section{
                                                         display: block;
                                                         text-align: center;    
                                                         padding: 12px 0;
-                                                        font-size: 1.2rem;
+                                                        font-size: 1.3rem;
                                                         cursor: pointer;
                                                     }
                                                 }
@@ -1533,7 +1540,7 @@ section{
                     background-color: var(--color-lightblue);
 
                     th{
-                        font-size: 1.2rem;
+                        font-size: 1.3rem;
                         padding:12px 0;
 
                         &+th{
@@ -1554,7 +1561,7 @@ section{
                     background-color: var(--color-background);
 
                     td{
-                        font-size: 1.2rem;
+                        font-size: 1.3rem;
                         padding:12px 8px;
                         font-weight: 500;
 
@@ -1592,13 +1599,13 @@ section{
                         }
 
                         th{
-                           font-size: 1.2rem;
+                           font-size: 1.3rem;
                             padding:10px 8px;
                             background-color: var(--color-lightblue); 
                         }
 
                         td{
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
                             padding:10px 8px;
 
                             &:first-child{
@@ -1620,7 +1627,7 @@ section{
                             ul{
                                
                                 li{
-                                    font-size: 1.2rem;
+                                    font-size: 1.3rem;
 
                                     &+li{
                                         margin-top: 2px;
@@ -1637,7 +1644,7 @@ section{
 .label_status {
     display: inline-block;
     padding: 4px 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.4;
     border-radius: 4px;
@@ -1712,7 +1719,7 @@ section{
 }
 
 .guide_detail_desc {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
 }
 
@@ -1867,7 +1874,7 @@ section .container .ap_content.dashboard_page {
                 }
 
                 .txt {
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                     color: var(--color-gray);
                     margin-top: 4px;
                 }
@@ -2668,4 +2675,60 @@ section .container .ap_content.dashboard_page {
             margin-bottom: 6px;
         }
     }
+}
+// ==========================================
+// 전체 화면 로딩 페이지 (.loading_page_wrap)
+// ==========================================
+.loading_page_wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    padding: 20px;
+
+    .loading_card {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        padding: 48px 40px;
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .spinner {
+            width: 52px;
+            height: 52px;
+            border: 4px solid var(--color-lightblue);
+            border-top-color: var(--color-primary);
+            border-radius: 50%;
+            animation: pageSpin 0.9s linear infinite;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: var(--color-gray2);
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+    }
+}
+
+@keyframes pageSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
