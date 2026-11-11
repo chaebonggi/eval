@@ -827,6 +827,11 @@ section{
                             table {
                                 min-width: 1080px;
                             }
+                            &.w800 {
+                                table {
+                                    min-width: 800px;
+                                }
+                            }
                         }
 
                         &.gap{
@@ -919,7 +924,8 @@ section{
                                         margin: -12px -8px;
                                         background-color: transparent;
 
-                                        &[type=number]{
+                                        &[type=number],
+                                        &.taright {
                                             text-align: right;
                                         }
                                     }
@@ -946,6 +952,10 @@ section{
 
                                     &.taright{
                                         text-align: right;
+
+                                        input{
+                                            text-align: right;
+                                        }
                                     }
                                 }
                             }
@@ -994,6 +1004,10 @@ section{
 
                                         &.taright{
                                             text-align: right;
+                                            
+                                            input, select{
+                                                text-align: right;
+                                            }
                                         }
 
                                         &.tacenter{
@@ -1020,7 +1034,7 @@ section{
                                             background-color: transparent;
 
                                             &[type=number],
-                                            &.taright{
+                                            &.taright {
                                                 text-align: right;
                                             }
                                         }
