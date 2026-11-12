@@ -884,6 +884,7 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
   background-color: var(--color-lightblue);
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td {
+  background-color: var(--color-white);
   font-size: 1.3rem;
   padding: 10px 8px;
   height: 1px;
@@ -1608,6 +1609,61 @@ section .container .split-wrapper .resizer:hover, section .container .split-wrap
 .tbl_divider_th {
   background-color: var(--color-lightblue2) !important;
   font-weight: 600 !important;
+}
+
+.self-highlight {
+  position: relative;
+  z-index: 1;
+}
+.self-highlight::after {
+  content: "";
+  position: absolute;
+  inset: -14px -8px;
+  z-index: -1;
+  background-color: #fffbe6;
+  border: 2px solid #e7ae00;
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.2);
+  border-radius: 8px;
+  pointer-events: none;
+  animation: selfHighlightFade 3.5s ease-out forwards;
+}
+
+@keyframes selfHighlightFade {
+  0%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.self-return-float {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 999;
+}
+.self-return-float button {
+  font-size: 1.4rem;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.self-return-float button span {
+  font-size: 1.8rem;
+}
+.self-return-float button:hover {
+  opacity: 0.92;
 }
 
 .dash_title_desc {

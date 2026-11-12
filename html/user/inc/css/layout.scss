@@ -972,6 +972,7 @@ section{
                                     }
 
                                     td{
+                                        background-color: var(--color-white);
                                         font-size: 1.3rem;
                                         padding:10px 8px;
                                         height: 1px;
@@ -1756,8 +1757,61 @@ section{
     background-color: var(--color-lightblue2) !important;
     font-weight: 600 !important;
 }
+// 작성 위치 이동 강조
+.self-highlight {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -14px -8px;
+        z-index: -1;
+        background-color: #fffbe6;
+        border: 2px solid #e7ae00;
+        box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.2);
+        border-radius: 8px;
+        pointer-events: none;
+        animation: selfHighlightFade 3.5s ease-out forwards;
+    }
+}
+
+@keyframes selfHighlightFade {
+    0%, 75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.self-return-float {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 999;
+
+    button {
+        @include button(var(--color-primary), var(--color-white), var(--color-primary));
+        padding: 12px 20px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 6px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        span {
+            font-size: 1.8rem;
+        }
+
+        &:hover {
+            opacity: 0.92;
+        }
+    }
+}
 // ==========================================
-// 사용자 대시보드 전용 스타일 (.dashboard_wrap)
+// 사용자 대시보드 전용 스타일
 // ==========================================
 .dash_title_desc {
     font-size: 1.35rem;

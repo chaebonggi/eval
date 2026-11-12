@@ -300,4 +300,59 @@ $(function () {
   }).on('mouseleave', '[data-tooltips]', function() {
     $('#globalTooltip').hide();
   });
+
+  // 작성위치이동 포커스
+  $(document).on('click', '.btn_move_link', function() {
+    sessionStorage.setItem('fromSelfCheck', 'Y');
+  });
+
+  function focusFromSelfCheck() {
+    if (sessionStorage.getItem('fromSelfCheck') !== 'Y') return;
+    sessionStorage.removeItem('fromSelfCheck');
+
+    if ($('.ap_content .contents_wrap').length > 0) {
+      $('.ap_content .contents_wrap').prepend(
+        '<div class="dash_notice_box" style="margin-bottom:20px;">' +
+        '<strong>[자가점검 이동]</strong> 자가점검표에서 확인이 필요한 항목으로 이동했습니다. 내용을 보완하신 후 우측 하단 버튼을 눌러 돌아가세요.' +
+        '</div>'
+      );
+
+      $('body').append(
+        '<div class="self-return-float">' +
+        '<button type="button" onclick="alert(\'임시저장되었습니다.\'); location.href=\'user-self.html\';">' +
+        '<span class="material-symbols-outlined">save</span> 저장 후 자가점검 돌아가기' +
+        '</button>' +
+        '</div>'
+      );
+    }
+
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const $target = $(hash);
+    if ($target.length === 0) return;
+
+    const $highlightBox = $target.is('h3') ? $target.next('.response_table') : $target;
+    const $el = $highlightBox.length > 0 ? $highlightBox : $target;
+
+    setTimeout(function() {
+      $target[0].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+
+      $el.addClass('self-highlight');
+
+      const $firstInput = $el.find('select, input:not([readonly]), textarea').first();
+      if ($firstInput.length > 0) {
+        $firstInput.focus({ preventScroll: true });
+      }
+
+      setTimeout(function() {
+        $el.removeClass('self-highlight');
+      }, 3500);
+    }, 150);
+  }
+
+  focusFromSelfCheck();
 });
