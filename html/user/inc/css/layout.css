@@ -837,9 +837,6 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tf
   font-size: 1.3rem;
   padding: 12px 8px;
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td input {
   width: calc(100% + 16px);
@@ -890,9 +887,6 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
   font-size: 1.3rem;
   padding: 10px 8px;
   height: 1px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td.bg_load, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td.bg_load input {
   background-color: rgba(82, 196, 26, 0.08);

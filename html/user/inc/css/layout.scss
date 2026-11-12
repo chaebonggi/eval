@@ -909,9 +909,6 @@ section{
                                     font-size: 1.3rem;
                                     padding:12px 8px;
                                     font-weight: 500;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
 
                                     input{
                                         width: calc(100% + 16px);
@@ -978,9 +975,6 @@ section{
                                         font-size: 1.3rem;
                                         padding:10px 8px;
                                         height: 1px;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        white-space: nowrap;
                                         
                                         &.bg_load,
                                         &.bg_load input{
