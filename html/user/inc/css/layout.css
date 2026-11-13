@@ -2539,7 +2539,7 @@ section .container .ap_content.dashboard_page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-background);
+  background-color: color-mix(in srgb, var(--color-background) 70%, transparent);
   padding: 20px;
 }
 .loading_page_wrap .loading_card {
