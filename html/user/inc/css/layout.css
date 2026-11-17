@@ -826,6 +826,7 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table th
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot {
   background-color: var(--color-background);
+  border-radius: 0 0 8px 8px;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot tr:first-child td {
   border-top: 1px solid var(--color-border);
@@ -865,6 +866,9 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tf
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td:last-child {
   border-radius: 0 0 8px 0;
+}
+section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td:only-child {
+  border-radius: 0 0 8px 8px;
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tfoot td + td {
   border-left: 1px solid var(--color-border);
@@ -945,6 +949,15 @@ section .container .ap_content .contents_wrap .response_table .tbl_wrap table tb
 }
 section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input[type=number], section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td input.taright, section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select[type=number], section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody tr td select.taright {
   text-align: right;
+}
+section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 8px;
+}
+section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody:last-child tr:last-child td:last-child {
+  border-radius: 0 0 8px 0;
+}
+section .container .ap_content .contents_wrap .response_table .tbl_wrap table tbody:last-child tr:last-child td:only-child {
+  border-radius: 0 0 8px 8px;
 }
 section .container .ap_content .btn_wrap {
   display: flex;

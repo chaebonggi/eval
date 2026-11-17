@@ -896,6 +896,7 @@ section{
 
                             tfoot{
                                 background-color: var(--color-background);
+                                border-radius: 0 0 8px 8px;
 
                                 tr:first-child{
                                     td{
@@ -941,6 +942,10 @@ section{
 
                                     &:last-child{
                                         border-radius: 0 0 8px 0;
+                                    }
+
+                                    &:only-child{
+                                        border-radius: 0 0 8px 8px;
                                     }
 
                                     &+td{
@@ -1032,6 +1037,20 @@ section{
                                             &.taright {
                                                 text-align: right;
                                             }
+                                        }
+                                    }
+                                }
+
+                                &:last-child {
+                                    tr:last-child {
+                                        td:first-child {
+                                            border-radius: 0 0 0 8px;
+                                        }
+                                        td:last-child {
+                                            border-radius: 0 0 8px 0;
+                                        }
+                                        td:only-child {
+                                            border-radius: 0 0 8px 8px;
                                         }
                                     }
                                 }
