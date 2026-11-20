@@ -147,7 +147,7 @@ $(function() {
   $('table input[type="number"], .bg_load input, input.bg_load, .bg_load span').each(function() {
     var $this = $(this);
     if ($this.is('input')) {
-      $this.attr('type', 'text');
+      $this.attr('type', 'text').attr('data-num', 'Y');
       var val = $this.val();
       if (val && !isNaN(val.toString().replace(/,/g, '')) && val.toString().indexOf('%') === -1) {
         $this.val(formatNumber(val));
@@ -163,13 +163,12 @@ $(function() {
   $(document).on('focus', 'table tbody input, table tfoot input', function() {
     var $this = $(this);
     if ($this.attr('type') === 'number') {
-      $this.attr('type', 'text');
+      $this.attr('type', 'text').attr('data-num', 'Y');
     }
   });
 
   $(document).on('input', 'table tbody input, table tfoot input', function() {
     var $this = $(this);
-    var placeholder = $this.attr('placeholder') || '';
     var colIdx = $this.closest('td').index();
     var $th = $this.closest('table').find('thead th').eq(colIdx);
     var thText = $th.text() || '';
@@ -181,12 +180,18 @@ $(function() {
       return;
     }
 
-    if (placeholder.indexOf('예:') > -1 || placeholder.indexOf('입력') > -1 || placeholder.indexOf('재배') > -1) {
+    var isNumericField = $this.attr('data-num') === 'Y' || $this.hasClass('area-input') || $this.hasClass('taright');
+    if (!isNumericField) {
       return;
     }
 
     var curVal = $this.val();
-    if (!curVal) return;
+    if (!curVal) {
+      if ($this.hasClass('area-input')) {
+        calculateTableArea.call(this);
+      }
+      return;
+    }
 
     var cleanVal = curVal.replace(/[^0-9.]/g, '');
     if (cleanVal === '') {
