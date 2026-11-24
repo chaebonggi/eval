@@ -118,6 +118,10 @@ p, span {
   gap: 1rem;
 }
 
+.gap-20 {
+  gap: 2rem;
+}
+
 .fw700 {
   font-weight: 700;
 }
@@ -1213,4 +1217,64 @@ td .txt_diff {
   color: #e03131;
   background-color: #fff4f4;
   border: 1px solid #fcc;
+}
+
+.quant_eval_table .score_input {
+  width: 11rem;
+  height: 32px;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 8px;
+  transition: all 0.15s;
+}
+.quant_eval_table .score_input:focus {
+  border-color: #3776cf;
+  box-shadow: 0 0 0 2px rgba(55, 118, 207, 0.15);
+  outline: none;
+}
+.quant_eval_table .score_input.changed {
+  background-color: #fff3c9;
+  border-color: #d2a345;
+  color: #222;
+}
+.quant_eval_table .score_input.invalid {
+  background-color: #fff0ef;
+  border: 2px solid #bf3535;
+  color: #b12626;
+}
+.quant_eval_table .row_sum {
+  font-weight: 700;
+}
+.quant_eval_table .row_sum.changed {
+  color: #986200;
+}
+
+.quant_eval_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.quant_eval_footer .quant_msg {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  min-height: 1.8rem;
+}
+.quant_eval_footer .quant_msg.warn {
+  color: #916000;
+}
+.quant_eval_footer .quant_msg.error {
+  color: #b12626;
+}
+.quant_eval_footer .quant_hint {
+  font-size: 1.25rem;
+  color: #666;
+}
+.quant_eval_footer .krds-btn:disabled {
+  background-color: #a9bcd5;
+  border-color: #a9bcd5;
+  cursor: not-allowed;
+  opacity: 1;
 }

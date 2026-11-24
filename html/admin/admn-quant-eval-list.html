@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가관리시스템 - 정량평가 관리</title>
+    <link rel="preload" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preload" href="https://code.jquery.com/jquery-2.2.4.min.js" as="script">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="inc/css/krds.min.css" />
+    <link rel="stylesheet" href="inc/css/common.min.css" />
+    <link rel="stylesheet" href="inc/css/layout.min.css" />
+    <script src="inc/js/krds.min.js"></script>
+    <script src="inc/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div><h1>청년농업인 영농정착원사업 평가시스템</h1></div>
+            <div class="year">2026년도</div>
+        </div>
+        <div><a href="/"><img src="images/logo_epis.svg" alt="평가관리시스템 로고" /></a></div>
+        <div class="usr_info">
+            <div class="badge usr03">관리자</div>
+            <div class="usr_menu">홍길동님, 안녕하세요!</div>
+            <div class="usr_menu">
+                <span class="material-symbols-outlined">stat_minus_1</span>
+                <div class="usr_menu_list">
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">person</span>정보변경</a></li>
+                        <li><a href="javascript:void(0)"><span class="material-symbols-outlined">logout</span>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="snb_wrap">
+            <ul>
+                <li>
+                    <span class="stit">회원 관리</span>
+                    <div><span class="material-symbols-outlined">patient_list</span><a href="admn-user-list.html" class="d1">대상자 관리</a></div>
+                    <div><span class="material-symbols-outlined">manage_accounts</span><a href="admn-evaluator-list.html" class="d1">평가위원 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">평가 관리</span>
+                    <div><span class="material-symbols-outlined">task_alt</span><a href="admn-eval-qual-list.html" class="d1">정성평가 관리</a></div>
+                    <div><span class="material-symbols-outlined">person_search</span><a href="admn-eval-score-list.html" class="d1">대상자별 평가점수</a></div>
+                    <div><span class="material-symbols-outlined">edit_square</span><a href="admn-quant-eval-list.html" class="d1 active">정량평가 관리</a></div>
+                </li>
+                <li>
+                    <span class="stit">서류 관리</span>
+                    <div><span class="material-symbols-outlined">app_registration</span><a href="admn-doc-list.html" class="d1">평가위원 제출서류</a></div>
+                </li>
+                <li>
+                    <span class="stit">통계</span>
+                    <div><span class="material-symbols-outlined">web</span><a href="admn-stat-summary.html" class="d1">전체 평가요약</a></div>
+                    <div><span class="material-symbols-outlined">travel_explore</span><a href="admn-stat-region.html" class="d1">지역별 통계</a></div>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2026 농림축산식품부.<br/>All Rights Reserved.</div>
+        </div>
+        
+        <div class="container">
+            <div class="ap_content full_width">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>홈</li>
+                        <li>평가 관리</li>
+                        <li>정량평가 관리</li>
+                    </ul>
+                </div>
+                <div class="flex jcbetween aibottom">
+                    <h2>정량평가 관리</h2>
+                </div>
+                <div class="contents_wrap">
+                    <div class="flex jcs alc flex-w gap-10 mb10">
+                        <div class="flex alc gap-10">
+                            <label for="filterQuantStatus" class="fw700">상태</label>
+                            <select class="krds-form-select small w120" id="filterQuantStatus">
+                                <option value="all">전체</option>
+                                <option value="done">완료</option>
+                                <option value="todo">미완료</option>
+                            </select>
+                        </div>
+
+                        <div class="flex alc flex-w gap-20">
+                            <div class="eval_summary_cnt">
+                                <span class="total">총 <strong>100</strong>명</span>
+                                <i class="bar"></i>
+                                <span class="comp">입력완료 <strong>1</strong>명</span>
+                                <i class="bar"></i>
+                                <span class="ing">미완료 <strong>99</strong>명</span>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="krds-btn excel" id="btnExcelDownload">
+                                    <i class="svg-icon ico-download right"></i> 엑셀 다운로드
+                                </button>
+                                <select class="krds-form-select small w100" id="pageUnit" title="목록 건수 선택">
+                                    <option value="10">10개</option>
+                                    <option value="20">20개</option>
+                                    <option value="50">50개</option>
+                                    <option value="100">100개</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_wrap">
+                        <div class="table-container">
+                            <div class="krds-table-wrap tbl-type03">
+                                <table class="tbl col data min-full quant_eval_table">
+                                    <caption>정량평가 목록 표 (번호, 식별번호, 자격점수, 교육점수, 경력점수, 합계, 상태)</caption>
+                                    <colgroup>
+                                        <col style="width: 8rem;">
+                                        <col style="width: 22rem;">
+                                        <col style="width: 15rem;">
+                                        <col style="width: 15rem;">
+                                        <col style="width: 15rem;">
+                                        <col style="width: 13rem;">
+                                        <col style="width: 14rem;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">식별번호</th>
+                                            <th scope="col">자격점수</th>
+                                            <th scope="col">교육점수</th>
+                                            <th scope="col">경력점수</th>
+                                            <th scope="col">합계</th>
+                                            <th scope="col">상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>경기-수원시-001</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" value="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" value="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" value="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">25</td>
+                                            <td><span class="label_status comp">완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>경기-수원시-002</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>경기-수원시-003</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>경기-수원시-004</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>경기-수원시-005</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>경기-수원시-006</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>경기-수원시-007</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>경기-수원시-008</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>경기-수원시-009</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>경기-수원시-010</td>
+                                            <td><input type="text" class="krds-input score_input" data-max="9" inputmode="numeric" title="0~9점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td><input type="text" class="krds-input score_input" data-max="8" inputmode="numeric" title="0~8점"></td>
+                                            <td class="row_sum">-</td>
+                                            <td><span class="label_status warn">미완료</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="quant_eval_footer mt20">
+                            <div class="guide_area">
+                                <p id="quantAlertMsg" class="quant_msg"></p>
+                                <p class="quant_hint">※ 점수를 입력한 후 [현재 페이지 저장]을 눌러 주세요. 완료된 점수도 수정할 수 있습니다.</p>
+                            </div>
+                            <button type="button" class="krds-btn btn_confirm" id="btnSaveQuantPage" disabled>현재 페이지 저장</button>
+                        </div>
+
+                        <div class="pagination_wrap">
+                            <button type="button" class="page_btn start" title="첫 페이지로 이동">&laquo;</button>
+                            <button type="button" class="page_btn prev" title="이전 페이지로 이동">&lsaquo;</button>
+                            <a href="javascript:void(0)" class="active">1</a>
+                            <a href="javascript:void(0)">2</a>
+                            <a href="javascript:void(0)">3</a>
+                            <a href="javascript:void(0)">4</a>
+                            <a href="javascript:void(0)">5</a>
+                            <a href="javascript:void(0)">6</a>
+                            <a href="javascript:void(0)">7</a>
+                            <a href="javascript:void(0)">8</a>
+                            <a href="javascript:void(0)">9</a>
+                            <a href="javascript:void(0)">10</a>
+                            <button type="button" class="page_btn next" title="다음 페이지로 이동">&rsaquo;</button>
+                            <button type="button" class="page_btn end" title="마지막 페이지로 이동">&raquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).on('input', '.quant_eval_table .score_input', function() {
+            const $input = $(this);
+            const val = $.trim($input.val());
+            const maxScore = Number($input.attr('data-max')) || 9;
+            const $tr = $input.closest('tr');
+
+            $input.removeClass('changed invalid');
+
+            if (val !== '') {
+                if (/^\d+$/.test(val) && Number(val) <= maxScore) {
+                    $input.addClass('changed');
+                } else {
+                    $input.addClass('invalid');
+                }
+            }
+
+            const $inputs = $tr.find('.score_input');
+            const $sumCell = $tr.find('.row_sum');
+            let allFilled = true;
+            let total = 0;
+
+            $inputs.each(function() {
+                const v = $.trim($(this).val());
+                const m = Number($(this).attr('data-max')) || 9;
+                if (v === '' || !/^\d+$/.test(v) || Number(v) > m) {
+                    allFilled = false;
+                    return false;
+                }
+                total += Number(v);
+            });
+
+            if (allFilled) {
+                $sumCell.text(total).addClass('changed');
+            } else {
+                const hasAnyChanged = $tr.find('.score_input.changed').length > 0;
+                $sumCell.text('-').toggleClass('changed', hasAnyChanged);
+            }
+
+            const invalidCount = $('.quant_eval_table .score_input.invalid').length;
+            const changedCount = $('.quant_eval_table .score_input.changed').length;
+            const $msg = $('#quantAlertMsg');
+            const $saveBtn = $('#btnSaveQuantPage');
+
+            $msg.removeClass('warn error').text('');
+
+            if (invalidCount > 0) {
+                $msg.addClass('error').text('점수 입력 범위를 확인해 주세요. (숫자만 입력 가능)');
+                $saveBtn.prop('disabled', true);
+            } else if (changedCount > 0) {
+                $msg.addClass('warn').text('저장되지 않은 변경사항이 있습니다.');
+                $saveBtn.prop('disabled', false);
+            } else {
+                $saveBtn.prop('disabled', true);
+            }
+        });
+    </script>
+</body>
+</html>
