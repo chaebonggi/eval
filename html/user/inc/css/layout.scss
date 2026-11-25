@@ -263,6 +263,15 @@ section{
         width: var(--width-snb);
         padding:20px;
 
+        &.exam_snb {
+            width: var(--width-snb-exam);
+
+            .copyright {
+                width: var(--width-snb-exam);
+                text-align: center;
+            }
+        }
+
         ul{
             li{
 
@@ -301,7 +310,6 @@ section{
 
                             &:checked + label{
                                 color: var(--color-white);
-                                //background-color: var(--color-primary);
 
                                 & > .notification{
                                     background-color: var(--color-lightblue);
@@ -315,18 +323,24 @@ section{
                         }
 
                         input[id=tab-2]:checked ~ .glider{
-                            transform: translateX(calc(100% - 1px));
+                            transform: translateX(100%);
                         }
 
                         input[id=tab-3]:checked ~ .glider{
-                            transform: translateX(calc(200% - 2px));
+                            transform: translateX(200%);
+                        }
+
+                        input[id=tab-4]:checked ~ .glider{
+                            transform: translateX(300%);
                         }
 
                         .glider{
                             position:absolute;
+                            top: 2px;
+                            left: 2px;
                             display:flex;
                             height:32px;
-                            width:33%;
+                            width:calc(25% - 1px);
                             background-color:var(--color-primary);
                             z-index:1;
                             border-radius:4px;
@@ -338,25 +352,128 @@ section{
                             align-items: center;    
                             justify-content: center;
                             height: 32px;
-                            width: 33.33%;
-                            font-size: 1.3rem;
+                            width: 25%;
+                            padding: 0 2px;
+                            font-size: 1.15rem;
                             font-weight: 500;
                             border-radius: 4px;
                             cursor: pointer;
                             color: var(--color-text);
                             transition: color 0.15s ease-in;
+                            letter-spacing: -0.5px;
+                            white-space: nowrap;
 
                             .notification{
-                                display:flex;
+                                display:inline-flex;
                                 align-items:center;
                                 justify-content:center;
-                                padding:3px 4px;
-                                margin-left:4px;
+                                padding:2px 4px;
+                                margin-left:3px;
                                 border-radius:4px;
                                 background-color:var(--color-border);
-                                color: var(--color-gray);
-                                font-size: .85rem;
+                                color: var(--color-gray2);
+                                font-size: 0.95rem;
+                                line-height: 1;
                                 transition:0.15s ease-in;
+                            }
+                        }
+                    }
+
+                    &.list_wrap{
+                        background-color: rgba(255,255,255,.9);
+                        overflow: auto;
+                        border-radius: 4px;
+
+                        @include scrollbar();
+
+                        ul{
+                            width: 100%;
+                            height: calc(100vh - 250px);
+
+                            li{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 8px;
+                                width: 100%;
+                                font-size: 1.3rem;
+                                color: var(--color-text);
+                                padding: 12px;
+                                cursor: pointer;
+
+                                &+li{
+                                    border-top: 1px dotted var(--color-primary);
+                                    margin: 0;
+                                }
+
+                                &.current{
+                                    background-color: var(--color-lightblue2);
+                                    color: var(--color-primary);
+                                }
+
+                                & > div:first-child{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    font-size:1.3rem;
+                                    font-weight: 600;
+                                    margin:0;
+
+                                    span{
+                                        display: inline-block;
+                                        margin-top: 4px;
+                                        font-size: 1.15rem;
+                                        font-weight: 400;
+                                        color: var(--color-gray2);
+                                    }
+                                }
+
+                                div.list_right {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    gap: 8px;
+                                    flex-shrink: 0;
+                                    margin: 0;
+
+                                    .eval_score {
+                                        font-size: 1.2rem;
+                                        color: var(--color-gray2);
+                                        white-space: nowrap;
+                                        min-width: 34px;
+                                        text-align: right;
+
+                                        strong {
+                                            font-size: 1.35rem;
+                                            font-weight: 700;
+                                            color: var(--color-primary);
+                                        }
+                                    }
+
+                                    div.state{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        min-width: 52px;
+                                        font-size: 1.15rem;
+                                        font-weight: 600;
+                                        padding: 4px 6px;
+                                        border-radius: 4px;
+                                        white-space: nowrap;
+                                        background-color: var(--color-danger-back);
+                                        color: var(--color-danger);
+
+                                        &.temp{
+                                            background-color: var(--color-warning-back);
+                                            color: var(--color-warning);
+                                        }
+
+                                        &.comp{
+                                            background-color: var(--color-guide-border);
+                                            color: var(--color-guide-text);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1314,6 +1431,8 @@ section{
 
                                             .marking_amount{
                                                 font-size: 1.3rem;
+                                                font-weight: 700;
+                                                color: var(--color-primary);
                                             }
                                         }
                                     }
@@ -1479,6 +1598,9 @@ section{
                 }
             }
         }
+    }
+    .snb_wrap.exam_snb + .container .split-wrapper {
+        width: calc(100vw - var(--width-snb-exam));
     }
 
 }
