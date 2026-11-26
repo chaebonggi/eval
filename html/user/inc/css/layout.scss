@@ -1896,7 +1896,57 @@ section{
 }
 .tbl_divider_th {
     background-color: var(--color-lightblue2) !important;
-    font-weight: 600 !important;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+
+    .sub_item_head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        span {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .sub_item_btns {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            button {
+                padding: 4px 12px;
+                font-size: 1.2rem;
+                font-weight: 600;
+                border-radius: 20px;
+                background-color: var(--color-white);
+                cursor: pointer;
+                transition: all 0.15s ease;
+                line-height: 1.3;
+
+                &.btn_sub_add {
+                    color: var(--color-primary);
+                    border: 1px solid var(--color-primary);
+
+                    &:hover {
+                        background-color: var(--color-lightblue);
+                    }
+                }
+
+                &.btn_sub_del {
+                    color: var(--color-danger);
+                    border: 1px solid var(--color-danger);
+
+                    &:hover {
+                        background-color: var(--color-danger-back);
+                    }
+                }
+            }
+        }
+    }
 }
 // 작성 위치 이동 강조
 .self-highlight {
