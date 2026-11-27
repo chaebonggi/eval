@@ -1621,6 +1621,20 @@ section{
         background-color: transparent;
     }
 }
+.highlight-pin {
+    animation: scoreHighlight 2s ease-out;
+    border: 1px solid var(--color-danger);
+    outline-offset: 1px;
+}
+
+@keyframes scorePinHighlight {
+    0% {
+        background-color: rgba(255, 77, 79, 0.25);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
 
 .modal_wrap{
     position: absolute;

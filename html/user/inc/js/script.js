@@ -261,6 +261,29 @@ $(function() {
 });
 
 $(function () {
+  // $(document).on('click', '[data-score-target]', function () {
+  //   const targetKey = $(this).data('score-target');
+  //   if (!targetKey) return;
+
+  //   const $target = $(`[data-score="${targetKey}"]`);
+
+  //   if ($target.length > 0) {
+  //     $target[0].scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'center'
+  //     });
+
+  //     $target.removeClass('highlight-target');
+  //     void $target[0].offsetWidth;
+  //     $target.addClass('highlight-target');
+
+  //     setTimeout(function () {
+  //       $target.removeClass('highlight-target');
+  //     }, 3000);
+  //   } else {
+  //     console.warn(`[data-score="${targetKey}"] 요소를 찾을 수 없습니다.`);
+  //   }
+  // });
   $(document).on('click', '[data-score-target]', function () {
     const targetKey = $(this).data('score-target');
     if (!targetKey) return;
@@ -282,6 +305,24 @@ $(function () {
       }, 3000);
     } else {
       console.warn(`[data-score="${targetKey}"] 요소를 찾을 수 없습니다.`);
+    }
+  });
+
+  $(document).on('click', '[data-score-pin-target]', function () {
+    const targetKey = $(this).data('score-pin-target');
+    if (!targetKey) return;
+
+    // 이전에 고정된 타겟 클래스 제거
+    $('[data-score-pin]').removeClass('highlight-target');
+
+    const $target = $(`[data-score-pin="${targetKey}"]`);
+
+    if ($target.length > 0) {
+
+      void $target[0].offsetWidth;
+      $target.addClass('highlight-target');
+    } else {
+      console.warn(`[data-score-pin="${targetKey}"] 요소를 찾을 수 없습니다.`);
     }
   });
 
