@@ -318,7 +318,11 @@ $(function () {
     const $target = $(`[data-score-pin="${targetKey}"]`);
 
     if ($target.length > 0) {
-
+      $target[0].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+      
       void $target[0].offsetWidth;
       $target.addClass('highlight-target');
     } else {
